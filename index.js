@@ -67,6 +67,49 @@ function toggleColor(element) {
     }
 }
 
+
+header.addEventListener("click", function() {
+    toggleColor(header)
+})
+    
+
 /***** Deliverable 2 *****/
 
+
+
+let likeButton = document.querySelector("button.like-button")
+
+
+likeButton.addEventListener("click", function() {
+    let totalLikes =  parseInt(likes.textContent)
+    likes.textContent = totalLikes + 1 + " Likes"
+})
+
+
+
 /***** Deliverable 3 *****/
+
+let newSubmit = document.querySelector("#new-animal-sighting-form")
+
+newSubmit.addEventListener("submit", function(evt){
+    evt.preventDefault()
+
+    let newSpecies = evt.target.species.value
+    let newVideo = evt.target.link.value
+    let newPhoto = evt.target.photo.value
+    let newDescription = evt.target.description.value
+
+
+ let newSighting = {
+        id: 5,
+        species: newSpecies,
+        link: newVideo,
+        photo: newPhoto,
+        description: newDescription
+ }
+
+    renderAnimalSightingPost(newSighting)
+
+    newSubmit.reset()
+
+})
