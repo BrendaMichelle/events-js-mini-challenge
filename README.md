@@ -46,7 +46,9 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
+First, checked if i had a variable for the header and I do from Deliverable 1.
 
+Then added event listener for a click event. Inside my callback function, i called toggleColor on the h1#header
 ```
 
 ## Deliverable 2: Like Button
@@ -54,7 +56,11 @@ Once you have it working in the console, write an event listener that will use t
 **When a user clicks the like button for Raffy's profile picture**, Raffy's likes should increase by 1. The likes won't persist (if you refresh the page, they'll reset to their original value) - we'll add persistence in a future challenge.
 
 **YOUR NOTES**
-```
+```1. Find and grab the like button
+2. Find and gram the likes themselves
+3. Get the num (which we want to add to)
+2. Add an eventlistener for a click event
+3. inside callback function, set a newNum to num + 1 and then update theLikes.textContent with the new number.
 
 ```
 
@@ -81,6 +87,11 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
+1. access and grab the form as a whole.
+2. add event listener for 'submit'
+3. I went ahead and prevented Default from working so I could test more easily
+4. Found all the input values via debugger and evt.target. Set them to variables.
+5. Then save all the input information to a new variable that we can pass into renderAnimalSightingPost
 
 ```
 
