@@ -67,6 +67,30 @@ function toggleColor(element) {
     }
 }
 
+header.addEventListener("click", function(){
+    toggleColor(header)
+});
+
 /***** Deliverable 2 *****/
+const button = document.querySelector("button.like-button");
+button.addEventListener("click", function(event){
+    traveler.likes += 1;
+    console.log(traveler.likes);
+});
 
 /***** Deliverable 3 *****/
+const form = document.querySelector("#new-animal-sighting-form");
+form.addEventListener("submit", function(event){
+    event.preventDefault();
+    let newSighting = {
+        id: 5,
+        species: form.species.value,
+        photo: form.photo.value,
+        link: form.link.value,
+        description: form.description.value
+    };
+
+    renderAnimalSightingPost(newSighting);
+
+    form.reset();
+});
