@@ -60,13 +60,45 @@ animalToRemove.remove()
 
 /***** Deliverable 1 *****/
 function toggleColor(element) {
-    if (element.style.color === "green") {
+    if (element.style.color === "red") {
         element.style.color = "black"
     } else {
-        element.style.color = "green"
+        element.style.color = "red"
     }
 }
 
-/***** Deliverable 2 *****/
+header.addEventListener("click", function(evt) {
+    toggleColor(header)
+})
 
+/***** Deliverable 2 *****/
+const likeButton = document.querySelector("button.like-button")
+
+likeButton.addEventListener("click", function(evt) {
+
+    let totalLikes =  parseInt(likes.textContent)
+    likes.textContent = totalLikes + 1 + " Likes"
+})
 /***** Deliverable 3 *****/
+
+const newAnimalSightingForm = document.querySelector("form#new-animal-sighting-form")
+
+newAnimalSightingForm.addEventListener("submit", function(evt) {
+    evt.preventDefault()
+
+    // let species = document.querySelector("form#new-animal-sighting-form").species
+    // let videoLink = document.querySelector("form#new-animal-sighting-form").link
+    // let photoLink = document.querySelector("form#new-animal-sighting-form").photo
+    // let description = document.querySelector("form#new-animal-sighting-form").description
+
+    let speciesValue = evt.target.species.value
+    let videoLinkValue = evt.target.link.value
+    let photoLinkValue = evt.target.photo.value
+    let descriptionValue = evt.target.description.value
+
+    const animalObj = {species: speciesValue, link: videoLinkValue, photo: photoLinkValue, description: descriptionValue }
+
+    renderAnimalSightingPost(animalObj)
+
+    evt.target.reset()
+})
