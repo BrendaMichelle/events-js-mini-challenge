@@ -47,6 +47,8 @@ Once you have it working in the console, write an event listener that will use t
 **YOUR NOTES**
 ```
 
+Added an event listener to the header. BUT did not the togglecolor function directly in the eventistsner as for whatever reason that didnt work. 
+
 ```
 
 ## Deliverable 2: Like Button
@@ -55,7 +57,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+took a substring of the like number string and incremented that by one each time. then concenated that with the " likes" string to make a full sentence. Don't love this solution but it works! 
 ```
 
 ## Deliverable 3: Add a New Animal Sighting Post
