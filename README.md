@@ -46,7 +46,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+played around with it a bit-- have to look back at why i can't pass (header) into toggleColor, and why it has to be element
 ```
 
 ## Deliverable 2: Like Button

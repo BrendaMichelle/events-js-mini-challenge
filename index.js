@@ -1,7 +1,7 @@
 /***** Deliverable 1 *****/
 const header = document.querySelector("#header")
 console.log("Here's your header:", header)
-
+ 
 
 /***** Deliverable 2 *****/
 header.style.color = "green"
@@ -60,13 +60,33 @@ animalToRemove.remove()
 
 /***** Deliverable 1 *****/
 function toggleColor(element) {
-    if (element.style.color === "green") {
-        element.style.color = "black"
+    if (header.style.color === "green") {
+        header.style.color = "black"
     } else {
-        element.style.color = "green"
+        header.style.color = "green"
     }
 }
 
+header.addEventListener("click", toggleColor   )
 /***** Deliverable 2 *****/
 
+let likeButton = document.querySelector("button.like-button")
+likeButton.addEventListener("click", function(evt) {
+    // numLikes,  increment counter
+    // let numLikes = document.querySelector("p.likes")
+   ++traveler.likes
+   //obj is getting incremented, just need to display
+   likes.textContent = `${traveler.likes} Likes`
+// probably a more efficient way to do this, but for now good
+})
+
+
 /***** Deliverable 3 *****/
+
+
+let newSightingForm = document.querySelector("form#new-animal-sighting-form")
+newSightingForm.addEventListener("submit", function(evt) {
+    evt.preventDefault
+    console.log("Testing")
+    debugger
+})
