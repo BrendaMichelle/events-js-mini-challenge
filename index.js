@@ -90,7 +90,6 @@ let num = parseInt(like.textContent)
 console.log("num:", num)
 let button = document.querySelector("button")
 
-console.log(button)
 
 button.addEventListener("click", function(evt){
     buttonLikes = num++
@@ -103,15 +102,20 @@ button.addEventListener("click", function(evt){
 /***** Deliverable 3 *****/
 
 const form = document.querySelector("form#new-animal-sighting-form")
-
+console.log(form)
 form.addEventListener("submit", function(evt){
     
     evt.preventDefault()
-    console.log("evt is forever undefined, no matter what you do")
+    console.log(evt)
+   
+    const species = evt.target.species.value
+    const link = evt.target.link.value
+    const photo = evt.target.photo.value
+    const description = evt.target.description.value
 
+    const lastIndex = traveler.animalSightings.length - 1
+    const id = traveler.animalSightings[lastIndex].id + 1
     
-
-
-    renderAnimalSightingPost(evt)
+    renderAnimalSightingPost({species, link, photo, description, id})
 
 })
