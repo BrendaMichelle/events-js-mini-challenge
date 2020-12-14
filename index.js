@@ -1,13 +1,51 @@
 /***** Deliverable 1 *****/
 const header = document.querySelector("#header")
+header.style.color = "green"
 console.log("Here's your header:", header)
+
+header.addEventListener("click", function(){
+    toggleColor(document.querySelector("h1#header"))
+})
 
 
 /***** Deliverable 2 *****/
-header.style.color = "green"
+const likeButton = document.querySelector(".like-button")
+const pLikes = document.querySelector(".likes")
+
+likeButton.addEventListener("click", function(){
+    const totalLikes =  parseInt(pLikes.textContent)
+    pLikes.textContent = totalLikes + 1 + " Likes"
+})
 
 
 /***** Deliverable 3 *****/
+//ADD A NEW ANIMAL SIGHTING
+const form = document.querySelector("#new-animal-sighting-form")
+form.addEventListener("submit", function(event){
+    event.preventDefault()
+    const species = event.target.species.value
+    const videoLink = event.target.link.value
+    const photoLink = event.target.photo.value
+    const description = event.target.description.value
+    const lastAnimalId = document.querySelector("#animals").lastChild.dataset.id
+    const newAnimalId = parseInt(lastAnimalId) + 1
+
+    const newAnimalSighting = {
+        id: newAnimalId,
+        travelerId: 1,
+        species: species,
+        link: videoLink,
+        photo: photoLink,
+        description: description
+    }
+
+    renderAnimalSightingPost(newAnimalSighting)
+    event.target.reset()
+})
+
+
+
+// RAFFY PROFILE STARTER CODE
 console.log('This is what the traveler object looks like: ', traveler)
 
 const profileImg = document.querySelector("#profile img")
@@ -22,6 +60,7 @@ profileEm.textContent = traveler.nickname
 
 const likes = document.querySelector("#profile .likes")
 likes.textContent = `${traveler.likes} Likes`
+
 
 
 /***** Deliverable 4 *****/
