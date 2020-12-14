@@ -3,8 +3,11 @@ const header = document.querySelector("#header")
 console.log("Here's your header:", header)
 
 
+
 /***** Deliverable 2 *****/
 header.style.color = "green"
+
+
 
 
 /***** Deliverable 3 *****/
@@ -67,6 +70,32 @@ function toggleColor(element) {
     }
 }
 
+header.addEventListener("click", function(event){
+    toggleColor(header)
+} )
 /***** Deliverable 2 *****/
+let like = document.querySelector("button.like-button")
+let likeCount = document.querySelector("p.likes")
+let i = 1000
+
+like.addEventListener("click", function(event){
+    likeCount.textContent = `${i++} Likes`
+    
+})
 
 /***** Deliverable 3 *****/
+
+const form = document.querySelector("form#new-animal-sighting-form")
+let animal = {}
+form.addEventListener("submit", function(event){
+    event.preventDefault()
+    console.log("Submitted")
+  
+    animal["species"] = event.target.species.value 
+    animal["link"]  = event.target.link.value
+    animal["photo"] = event.target.photo.value
+    animal["description"] = event.target.description.value
+    // traveler.animalSightings.push(animal)
+
+    renderAnimalSightingPost(animal)
+})
