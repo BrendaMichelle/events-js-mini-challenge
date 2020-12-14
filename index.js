@@ -2,10 +2,8 @@
 const header = document.querySelector("#header")
 console.log("Here's your header:", header)
 
-
 /***** Deliverable 2 *****/
 header.style.color = "green"
-
 
 /***** Deliverable 3 *****/
 console.log('This is what the traveler object looks like: ', traveler)
@@ -67,6 +65,45 @@ function toggleColor(element) {
     }
 }
 
+
+header.addEventListener('click', function(){
+    toggleColor(header)
+})
+
+
 /***** Deliverable 2 *****/
+const likeButton = document.querySelector('.like-button')
+let likesStr = document.querySelector('.likes')
+let totalLikes = parseInt(likesStr.textContent)
+likeButton.addEventListener('click', function(){
+    totalLikes++
+    let newTotal = totalLikes.toString()
+    let arr = likesStr.textContent.split(' ')
+    arr[0] = newTotal
+    likesStr.textContent = arr.join(' ')
+})
+
+
 
 /***** Deliverable 3 *****/
+let sightingForm = document.querySelector('#new-animal-sighting-form')
+
+sightingForm.addEventListener('submit', function(evt){
+    evt.preventDefault()
+    console.log('form submitted')
+    
+    let sightingSpecies = evt.target.species.value
+    let sightingVideo = evt.target.link.value
+    let sightingPhoto = evt.target.photo.value
+    let sightingDescription = evt.target.description.value
+
+    let newSighting = {
+        species: sightingSpecies,
+        photo: sightingPhoto,
+        link: sightingVideo,
+        description: sightingDescription
+    }
+    renderAnimalSightingPost(newSighting)
+
+    evt.target.reset()
+})

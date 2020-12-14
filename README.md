@@ -46,6 +46,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
+- addEventListener for 'click' to change color depending on current color
 
 ```
 
@@ -55,7 +56,9 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+- target like button and assign to variable
+- target likes and assign to variable
+- add event listener to increment likes (this took some thinking, there is definitely a better way to refactor it)
 ```
 
 ## Deliverable 3: Add a New Animal Sighting Post
@@ -81,6 +84,9 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
+- target submit button and assign to variable 
+- addEventListener for 'submit'
+- target each input and invoke renderAnimalSightingPost function with given information as arguments
 
 ```
 
