@@ -1,13 +1,20 @@
 /***** Deliverable 1 *****/
-const header = document.querySelector("#header")
-console.log("Here's your header:", header)
 
 
-/***** Deliverable 2 *****/
+ 
 header.style.color = "green"
+/***** Deliverable 2 *****/
+ 
+
+
 
 
 /***** Deliverable 3 *****/
+
+
+
+
+
 console.log('This is what the traveler object looks like: ', traveler)
 
 const profileImg = document.querySelector("#profile img")
@@ -67,6 +74,48 @@ function toggleColor(element) {
     }
 }
 
+let button = document.getElementById('header');  
+let color = button.style.color;
+button.addEventListener('click', function ( ){
+    color = button.style.color = color === 'black' ? 'red' : 'black';
+});
+
+
 /***** Deliverable 2 *****/
+let heart = document.querySelector(".like-button")
+let inc = document.querySelector(".likes")
+heart.addEventListener("click", function ( ){
+    inc.innerHTML = parseInt(inc.innerHTML) +1;
+});
 
 /***** Deliverable 3 *****/
+let form = document.querySelector("#new-animal-sighting-form")
+
+form.addEventListener('submit', event =>{
+    event.preventDefault( )
+    
+    console.log("Form submission has happened")
+        species = document.querySelector("#animal-species")
+        const li = document.createElement("li")
+        const p = document.createElement("p")
+        input = document.querySelector("#sighting-description")
+        p.textContent = input.value 
+    
+        const img = document.createElement("img")
+        img_input = document.querySelector("#animal-photo")
+        img.textContent = img_input.value 
+        img.src = img_input.value 
+        img.alt =document.querySelector("#animal-species")
+
+
+        const a = document.createElement("a")
+        vid_input = document.querySelector("#animal-link")
+        vid_input.textContent = vid_input.value
+        vid_input.href = vid_input.value 
+    
+    
+        li.append(p, img, a)
+    
+        const animalsUl = document.querySelector("#animals")
+        animalsUl.append(li)
+});
