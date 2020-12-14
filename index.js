@@ -69,6 +69,8 @@ function toggleColor(element) {
 
 let headerH1 = document.querySelector("h1#header")
 
+// header.addEventListener("click", toggleColor)
+
 headerH1.addEventListener("click", function() {
     toggleColor(header)
 })
@@ -76,19 +78,18 @@ headerH1.addEventListener("click", function() {
 /***** Deliverable 2 *****/
 
 let likeButtton = document.querySelector(".like-button")
-let likeField = document.querySelector(".likes")
+// let likeField = document.querySelector(".likes")
 
 likeButtton.addEventListener("click", function() {
-  increaseLike()
-  console.log("liked")
+    traveler.likes += 1
+    likes.textContent = `${traveler.likes} Likes`
 })
 
-
-function increaseLike () {
-    let likeNum = parseInt(likeField.textContent.split(" ")[0])
-    likeNum += 1
-    likeField.textContent = `${likeNum.toString()} Likes`
-  }
+// function increaseLike () {
+//     let likeNum = parseInt(likeField.textContent.split(" ")[0])
+//     likeNum += 1
+//     likeField.textContent = `${likeNum.toString()} Likes`
+//   }
 
 /***** Deliverable 3 *****/
 
