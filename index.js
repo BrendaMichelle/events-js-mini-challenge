@@ -59,6 +59,9 @@ animalToRemove.remove()
 /************************** EVENTS JS MINI CHALLENGE ******************************/
 
 /***** Deliverable 1 *****/
+
+
+
 function toggleColor(element) {
     if (element.style.color === "green") {
         element.style.color = "black"
@@ -67,6 +70,47 @@ function toggleColor(element) {
     }
 }
 
+header.addEventListener('click', function (evt) {
+    toggleColor(header)
+})
+
 /***** Deliverable 2 *****/
 
+let button = document.querySelector('.like-button')
+
+button.addEventListener('click', function(evt) {
+    likes.textContent = `${traveler.likes += 1} Likes`
+})
+
 /***** Deliverable 3 *****/
+
+let animalForm = document.querySelector('#new-animal-sighting-form')
+
+animalForm.addEventListener('submit', function(evt) {
+    evt.preventDefault()
+    
+    // let formSpecies = animalForm.species.value
+    // let formVideo = animalForm.link.value
+    // let formPhoto = animalForm.photo.value
+    // let formDesc = animalForm.description.value
+
+    let formSpecies = evt.target.species.value
+    let formVideo = evt.target.link.value
+    let formPhoto = evt.target.photo.value
+    let formDesc = evt.target.description.value
+
+    let newAni = {
+        // id: 5,
+        species: formSpecies,
+        photo: formPhoto,
+        link: formVideo,
+        description: formDesc
+    }
+
+    renderAnimalSightingPost(newAni)
+
+    // animalForm.reset()
+    evt.target.reset()
+
+
+})
