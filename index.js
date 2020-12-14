@@ -84,19 +84,25 @@ header.addEventListener("click", function(evt){
 /***** Deliverable 2 *****/
 
 
-let like = 0
+let like = document.querySelector("p.likes")
+console.log(like)
+let num = parseInt(like.textContent)
+console.log("num:", num)
 let button = document.querySelector("button")
+
 console.log(button)
 
 button.addEventListener("click", function(evt){
-    like++
+    buttonLikes = num++
+    like.textContent = `${buttonLikes} Likes`
+
 })
 
 
 
 /***** Deliverable 3 *****/
 
-let form = document.querySelector("form#new-animal-sighting-form")
+const form = document.querySelector("form#new-animal-sighting-form")
 
 form.addEventListener("submit", function(evt){
     
