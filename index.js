@@ -58,17 +58,19 @@ animalToRemove.remove()
 
 /***** Deliverable 1 *****/
 function toggleColor(element) {
-    if (element.style.color === "green") {
-        element.style.color = "black"
+    if (header.style.color === "green") {
+        header.style.color = "black"
     } else {
-        element.style.color = "green"
+        header.style.color = "green"
     }
 }
+
+// header.addEventListener("click", toggleColor)
 header.addEventListener("click", colorChange)
+header.style.cursor = "pointer"
 
 function colorChange(e) {
     const color = header.style.color
-    header.style.cursor = "pointer"
     header.style.color = color === 'black' ? 'red' : 'black'
 }
 
@@ -110,6 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
         li.append(p, img, a)
 
         animalsUl.append(li)
+        animalObject.target.reset()
     })
 
 });
