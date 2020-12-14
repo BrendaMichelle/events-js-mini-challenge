@@ -26,6 +26,7 @@ likes.textContent = `${traveler.likes} Likes`
 
 /***** Deliverable 4 *****/
 function renderAnimalSightingPost (animalObject) {
+
     const li = document.createElement("li")
     li.dataset.id = animalObject.id
 
@@ -45,6 +46,7 @@ function renderAnimalSightingPost (animalObject) {
 
     const animalsUl = document.querySelector("#animals")
     animalsUl.append(li)
+    
 }
 
 traveler.animalSightings.forEach(function (animalSightinObject) {
@@ -85,4 +87,38 @@ likeButton.addEventListener("click", function (evt) {
 
 
 /***** Deliverable 3 *****/
+
+let dummyId = 5
+
 form = document.querySelector('form#new-animal-sighting-form')
+
+form.addEventListener("submit", function (evt) {
+    evt.preventDefault()
+
+    const formSpecies = evt.target.querySelector('input#animal-species').value
+    const formLink = evt.target.querySelector('input#animal-link').value
+    const formPhoto = evt.target.querySelector('input#animal-photo').value
+    const formDescription = evt.target.querySelector('textarea#sighting-description').value
+
+    const li = document.createElement("li")
+    li.dataset.id = dummyId
+    dummyId += 1
+
+    const p = document.createElement("p")
+    p.textContent = formDescription
+
+    const img = document.createElement("img")
+    img.src = formPhoto
+    img.alt = formSpecies
+
+    const a = document.createElement("a")
+    a.href = formLink
+    a.target = "_blank"
+    a.textContent = `Here's a video about the ${formSpecies} species!`
+
+    li.append(p, img, a)
+
+    const animalsUl = document.querySelector("#animals")
+    animalsUl.append(li)
+     
+})
