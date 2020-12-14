@@ -70,8 +70,9 @@ header.addEventListener("click", colorChange)
 header.style.cursor = "pointer"
 
 function colorChange(e) {
-    const color = header.style.color
-    header.style.color = color === 'black' ? 'red' : 'black'
+    let element = e.target
+    const color = element.style.color
+    element.style.color = color === 'black' ? 'red' : 'black'
 }
 
 /***** Deliverable 2 *****/
