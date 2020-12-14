@@ -46,7 +46,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+couldn't figure out how to use that helper function but made it work with event listener. It switches colors when you click on a header. 
 ```
 
 ## Deliverable 2: Like Button
@@ -55,6 +55,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
+My like button is working, however when I click on it the first time, it's not showing on the page, but likes are increasong on console, and when I click the like button the second time, it shows on the page. Weird... 
 
 ```
 

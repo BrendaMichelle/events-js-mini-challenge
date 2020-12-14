@@ -59,14 +59,90 @@ animalToRemove.remove()
 /************************** EVENTS JS MINI CHALLENGE ******************************/
 
 /***** Deliverable 1 *****/
-function toggleColor(element) {
-    if (element.style.color === "green") {
-        element.style.color = "black"
+
+let changeH1Color = document.querySelector('h1') 
+
+changeH1Color.addEventListener("click", function() {
+    if(changeH1Color.style.color === "green") {
+        changeH1Color.style.color = "black"
+    } else if(changeH1Color.style.color === "black") {
+        changeH1Color.style.color = "red"
     } else {
-        element.style.color = "green"
+        changeH1Color.style.color = "green"
     }
-}
+}) 
+
+// function toggleColor(element) {
+//     if (element.style.color === "green") {
+//         element.style.color = "black"
+//     } else {
+//         element.style.color = "green"
+//     }
+// }
 
 /***** Deliverable 2 *****/
 
+let likeButton = document.querySelector("button.like-button") 
+
+likeButton.addEventListener("click", function() {
+    likes.textContent = `${traveler.likes++} Likes`
+}) 
+
 /***** Deliverable 3 *****/
+
+let newAnimalSighting = document.querySelector("form#new-animal-sighting-form")
+
+newAnimalSighting.addEventListener("submit", function(e){
+    e.preventDefault()
+
+    let aSpecies = e.target.species.value
+    let aPhoto = e.target.photo.value
+    let aVideo = e.target.link.value
+    let aDes = e.target.description.value
+
+    turnNewSightingToHTML(aSpecies, aPhoto, aVideo, aDes)
+    
+    e.target.reset()
+}) 
+
+////////////////////////////////
+
+function turnNewSightingToHTML(aSpecies, aPhoto, aVideo, aDes) {
+    let li = document.createElement("li")
+
+    let p = document.createElement("p")
+    p.textContent = aDes
+
+    let img = document.createElement("img")
+    img.src = aPhoto
+    img.alt = aSpecies
+
+    let a = document.createElement("a") 
+    a.href = aVideo
+    a.target = "_blank"
+    a.textContent = `Here's a video about the ${aSpecies} species!`
+
+    li.append(p, img, a)
+
+    let animals = document.querySelector("#animals")
+    animals.append(li)
+}
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+  
