@@ -71,4 +71,18 @@ header.addEventListener("click", toggleColor)
 
 /***** Deliverable 2 *****/
 
+const likeButton = document.querySelector('button.like-button')
+
+likeButton.addEventListener("click", function (evt) {
+
+   likeNumber = parseInt(likes.innerText, 10)
+    likeNumber +=1 
+
+    likes.innerText = `${likeNumber} Likes`
+
+    // debugger
+})
+
+
 /***** Deliverable 3 *****/
+form = document.querySelector('form#new-animal-sighting-form')
