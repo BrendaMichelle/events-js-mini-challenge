@@ -105,7 +105,7 @@ newSightingForm.addEventListener("submit", function(evt) {
 
     addAnimal(species,videoLink, photoLink, animDesc)
 
-    evt.target.reset
+    evt.target.reset()
 })
 
 function addAnimal(species,videoLink, photoLink, animalDesc) {
