@@ -3,6 +3,7 @@ const header = document.querySelector("#header")
 console.log("Here's your header:", header)
 
 
+
 /***** Deliverable 2 *****/
 header.style.color = "green"
 
@@ -66,7 +67,52 @@ function toggleColor(element) {
         element.style.color = "green"
     }
 }
-
+header.addEventListener("click", function(){
+    toggleColor(document.querySelector("h1#header"))
+    // toggleColor => document select => element
+})
 /***** Deliverable 2 *****/
 
+let likeButton = document.querySelector("button.like-button")
+    likeButton.addEventListener("click", function(event){
+    // event.preventDefault()
+    likes.textContent = `${traveler.likes+=1} Likes`
+    
+})
+
+
 /***** Deliverable 3 *****/
+let newAnimalForm = document.querySelector("form#new-animal-sighting-form")
+
+
+
+newAnimalForm.addEventListener("submit", function(event){
+    event.preventDefault()
+    //locate input, find the value
+    let theSpecies = event.target.species.value
+    let thePhoto = event.target.photo.value
+    let theLink = event.target.link.value
+    let theDescripton = event.target.description.value
+
+    const li = document.createElement("li")
+    // li.dataset.id = animalObject.id
+    // const h5 = document.createElement("h5")
+    // h5.textContent = theSpecies
+    const p = document.createElement("p")
+    p.textContent = theDescripton
+
+    const img = document.createElement("img")
+    img.src = thePhoto
+    img.alt = thePhoto
+
+    const a = document.createElement("a")
+    a.href = theLink
+    a.target = "_blank"
+    a.textContent = `Here's a video about the ${theSpecies} species!`
+
+    li.append(p, img, a)
+
+    const animalsUl = document.querySelector("#animals")
+    animalsUl.append(li)
+
+})
