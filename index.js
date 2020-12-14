@@ -62,11 +62,57 @@ animalToRemove.remove()
 function toggleColor(element) {
     if (element.style.color === "green") {
         element.style.color = "black"
-    } else {
-        element.style.color = "green"
+    } else if (element.style.color == "black") {
+        element.style.color = "red"
+    } else {element.style.color = "black"
     }
 }
 
+header.addEventListener("click", function(){
+    toggleColor(document.querySelector("h1#header"))
+})
+
 /***** Deliverable 2 *****/
+const like = document.querySelector("button.like-button")
+
+like.addEventListener("click", function(){
+    traveler.likes++
+    likes.textContent = `${traveler.likes} Likes`
+})
 
 /***** Deliverable 3 *****/
+let newForm = document.querySelector("form#new-animal-sighting-form")
+
+newForm.addEventListener("submit", function(e) {
+    e.preventDefault()
+
+    let newFormId = e.target.id.value
+    let newFormSpecies = e.target.species.value 
+    let newFormPhoto = e.target.photo.value
+    let newFormLink = e.target.link.value 
+    let newFormDescription = e.target.description.value 
+
+    e.target.reset()
+
+    const li = document.createElement("li")
+    li.dataset.id = newFormId
+
+    const p = document.createElement("p")
+    p.textContent = newFormDescription
+
+    const img = document.createElement("img")
+    img.src = newFormPhoto
+    img.alt = newFormSpecies
+
+    const a = document.createElement("a")
+    a.href = newFormLink
+    a.target = "_blank"
+    a.textContent = `Here's a video about the ${newFormSpecies} species!`
+
+    li.append(p, img, a)
+
+    const animalsUl = document.querySelector("#animals")
+    animalsUl.append(li)
+
+});
+
