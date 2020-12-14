@@ -55,6 +55,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
+I moved the header style color start code from deliverable 2 to under deliverable 1. It seemed to make more sense there.
 
 ```
 
