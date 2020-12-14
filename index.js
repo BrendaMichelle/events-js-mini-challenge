@@ -2,9 +2,19 @@
 const header = document.querySelector("#header")
 console.log("Here's your header:", header)
 
+header.addEventListener("click", function(){
+    toggleColor(header);
+})
 
 /***** Deliverable 2 *****/
 header.style.color = "green"
+
+const likeButton = document.querySelector(".like-button")
+likeButton.addEventListener("click", function(){
+    let travelerLikes = document.querySelector(".likes")
+    traveler.likes ++
+    travelerLikes.textContent = `${traveler.likes.toString()} Likes`
+});
 
 
 /***** Deliverable 3 *****/
@@ -23,6 +33,45 @@ profileEm.textContent = traveler.nickname
 const likes = document.querySelector("#profile .likes")
 likes.textContent = `${traveler.likes} Likes`
 
+
+let animalSightingForm = document.querySelector("#new-animal-sighting-form")
+
+animalSightingForm.addEventListener("submit", function(evt){
+    evt.preventDefault()
+    console.log("Animal Submitted")
+
+    let species = evt.target.species.value
+    let videoLink = evt.target.link.value
+    let pictureLink = evt.target.photo.value
+    let animalDescription = evt.target.description.value
+
+    addAnimal(species, videoLink, pictureLink, animalDescription)
+
+    evt.target.reset()
+});
+
+function addAnimal(species, videoLink, pictureLink, animalDescription) {
+    let animalUl = document.querySelector("#animals")
+
+    let li = document.createElement("li")
+        li.dataset.id = parseInt(animalUl.lastChild.dataset.id) + 1 
+
+    let p = document.createElement("p")
+        p.textContent = animalDescription
+
+
+    let a = document.createElement("a")
+        a.href = videoLink
+        a.textContent = `Here's a video about the ${species} species!`
+
+
+    let img = document.createElement("img")
+        img.src = pictureLink
+        img.alt = `${species} photo`
+
+    li.append(p, img, a)
+    animalUl.append(li)
+}
 
 /***** Deliverable 4 *****/
 function renderAnimalSightingPost (animalObject) {
