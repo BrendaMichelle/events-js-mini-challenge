@@ -46,7 +46,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+couldn't figure out how to use that helper function but made it work with event listener. It switches colors when you click on a header. 
 ```
 
 ## Deliverable 2: Like Button
@@ -55,6 +55,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
+
 
 ```
 
@@ -81,6 +82,7 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
+took a little to complete this one. 
 
 ```
 
