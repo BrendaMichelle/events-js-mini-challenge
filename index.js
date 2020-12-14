@@ -85,8 +85,10 @@ changeH1Color.addEventListener("click", function() {
 let likeButton = document.querySelector("button.like-button") 
 
 likeButton.addEventListener("click", function() {
-    likes.textContent = `${traveler.likes++} Likes`
+    likes.textContent = `${traveler.likes +=1} Likes`
+    console.log(traveler.likes)
 }) 
+
 
 /***** Deliverable 3 *****/
 

@@ -55,7 +55,7 @@ couldn't figure out how to use that helper function but made it work with event 
 
 **YOUR NOTES**
 ```
-My like button is working, however when I click on it the first time, it's not showing on the page, but likes are increasong on console, and when I click the like button the second time, it shows on the page. Weird... 
+
 
 ```
 
@@ -82,6 +82,7 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
+took a little to complete this one. 
 
 ```
 
