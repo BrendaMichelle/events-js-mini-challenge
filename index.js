@@ -85,7 +85,8 @@ button.addEventListener('click', function ( ){
 let heart = document.querySelector(".like-button")
 let inc = document.querySelector(".likes")
 heart.addEventListener("click", function ( ){
-    inc.innerHTML = parseInt(inc.innerHTML) +1;
+    let numlikes = parseInt(inc.innerHTML) +1
+    inc.textContent = `${numlikes} Likes`
 });
 
 /***** Deliverable 3 *****/
@@ -110,12 +111,13 @@ form.addEventListener('submit', event =>{
 
         const a = document.createElement("a")
         vid_input = document.querySelector("#animal-link")
-        vid_input.textContent = vid_input.value
+        vid_input.textContent = vid_input.value 
         vid_input.href = vid_input.value 
-    
+        vid_input.target = "_blank"
+    // wasnt able to show the video, could you help me understand how to? g
     
         li.append(p, img, a)
     
         const animalsUl = document.querySelector("#animals")
         animalsUl.append(li)
-});
+})
