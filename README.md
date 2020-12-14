@@ -32,7 +32,7 @@ There's a section in this Readme file for your notes on each deliverable. As you
 
 ## Deliverable 1: Toggle Header
 
-**When a user clicks the header**, the color should toggle between black and red. 
+<!-- **When a user clicks the header**, the color should toggle between black and red. 
 
 To get you started, there's a helper function already written takes in an element and toggles its color that you can use. You can try it out in your console:
 
@@ -47,16 +47,16 @@ Once you have it working in the console, write an event listener that will use t
 **YOUR NOTES**
 ```
 
-```
+``` -->
 
 ## Deliverable 2: Like Button
 
-**When a user clicks the like button for Raffy's profile picture**, Raffy's likes should increase by 1. The likes won't persist (if you refresh the page, they'll reset to their original value) - we'll add persistence in a future challenge.
+<!-- **When a user clicks the like button for Raffy's profile picture**, Raffy's likes should increase by 1. The likes won't persist (if you refresh the page, they'll reset to their original value) - we'll add persistence in a future challenge.
 
 **YOUR NOTES**
 ```
 
-```
+``` -->
 
 ## Deliverable 3: Add a New Animal Sighting Post
 
