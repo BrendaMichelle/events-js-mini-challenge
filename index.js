@@ -80,7 +80,8 @@ function colorChange(e) {
 const btn = document.querySelector("button.like-button")
 btn.style.cursor = "pointer"
 btn.addEventListener("click", function addLike() {
-    likes.textContent = `${traveler.likes++} Likes`
+    traveler.likes++
+    likes.textContent = `${traveler.likes} Likes`
 })
 
 /***** Deliverable 3 *****/
