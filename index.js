@@ -7,6 +7,8 @@ console.log("Here's your header:", header)
 header.style.color = "green"
 
 
+
+
 /***** Deliverable 3 *****/
 console.log('This is what the traveler object looks like: ', traveler)
 
@@ -22,6 +24,12 @@ profileEm.textContent = traveler.nickname
 
 const likes = document.querySelector("#profile .likes")
 likes.textContent = `${traveler.likes} Likes`
+
+
+
+
+
+
 
 
 /***** Deliverable 4 *****/
@@ -60,13 +68,44 @@ animalToRemove.remove()
 
 /***** Deliverable 1 *****/
 function toggleColor(element) {
-    if (element.style.color === "green") {
+    if (element.style.color === "red") {
         element.style.color = "black"
     } else {
-        element.style.color = "green"
+        element.style.color = "red"
     }
 }
 
+
+
+header.addEventListener("click", function(evt){
+    toggleColor(document.querySelector("h1#header"))
+})
+
 /***** Deliverable 2 *****/
 
+
+let like = 0
+let button = document.querySelector("button")
+console.log(button)
+
+button.addEventListener("click", function(evt){
+    like++
+})
+
+
+
 /***** Deliverable 3 *****/
+
+let form = document.querySelector("form#new-animal-sighting-form")
+
+form.addEventListener("submit", function(evt){
+    
+    evt.preventDefault()
+    console.log("evt is forever undefined, no matter what you do")
+
+    
+
+
+    renderAnimalSightingPost(evt)
+
+})
