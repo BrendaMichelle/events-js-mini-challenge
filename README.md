@@ -46,8 +46,8 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
-```
+<!-- Since we already have a function defined, we can add an event listener by selecting the specific element, in this case the header and add a click event to it, once it is clicked we run the toggleColor function and pass in the element which is header
+``` -->
 
 ## Deliverable 2: Like Button
 
