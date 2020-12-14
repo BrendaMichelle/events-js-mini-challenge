@@ -3,8 +3,9 @@ const header = document.querySelector("#header")
 console.log("Here's your header:", header)
 
 
+
 /***** Deliverable 2 *****/
-header.style.color = "green"
+header.style.color = "orange"
 
 
 /***** Deliverable 3 *****/
@@ -27,7 +28,7 @@ likes.textContent = `${traveler.likes} Likes`
 /***** Deliverable 4 *****/
 function renderAnimalSightingPost (animalObject) {
     const li = document.createElement("li")
-    li.dataset.id = animalObject.id
+     li.dataset.id = animalObject.id
 
     const p = document.createElement("p")
     p.textContent = animalObject.description
@@ -59,14 +60,58 @@ animalToRemove.remove()
 /************************** EVENTS JS MINI CHALLENGE ******************************/
 
 /***** Deliverable 1 *****/
+
 function toggleColor(element) {
-    if (element.style.color === "green") {
-        element.style.color = "black"
+    if (element.style.color === "orange") {
+        element.style.color = "red"
     } else {
-        element.style.color = "green"
+        element.style.color = "orange"
     }
 }
 
+header.addEventListener("click", function() {
+    toggleColor(document.querySelector("h1#header"))
+})
+
+
+
 /***** Deliverable 2 *****/
 
+// if button.like-button is clicked, then p.likes needs to increase by one
+
+const likeBtn = document.querySelector("button")
+const numOfLikes = document.querySelector("p")
+
+likeBtn.addEventListener("click", function(event) {
+    num = parseInt(numOfLikes.innerText)
+    num += 1
+    numOfLikes.innerText = num
+})
+
+
+// likeBtn.addEventListener("submit", function(event) {
+
+// })
+
+
 /***** Deliverable 3 *****/
+
+// use submit not click 
+// event.preventDefault()
+
+let newSightingForm = document.querySelector("form#new-animal-sighting-form")
+
+newSightingForm.addEventListener("submit", function(e) {
+    e.preventDefault()
+
+    let sightingSpecies = e.target.species.value
+    let sightingLink = e.target.link.value
+    let sightingPhoto = e.target.photo.value
+    let sightingDescription = e.target.description.value
+    
+
+    e.target.reset()
+
+
+} )
+
