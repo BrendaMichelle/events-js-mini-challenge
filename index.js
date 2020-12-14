@@ -7,6 +7,8 @@ console.log("Here's your header:", header)
 header.style.color = "green"
 
 
+
+
 /***** Deliverable 3 *****/
 console.log('This is what the traveler object looks like: ', traveler)
 
@@ -22,6 +24,12 @@ profileEm.textContent = traveler.nickname
 
 const likes = document.querySelector("#profile .likes")
 likes.textContent = `${traveler.likes} Likes`
+
+
+
+
+
+
 
 
 /***** Deliverable 4 *****/
@@ -60,13 +68,54 @@ animalToRemove.remove()
 
 /***** Deliverable 1 *****/
 function toggleColor(element) {
-    if (element.style.color === "green") {
+    if (element.style.color === "red") {
         element.style.color = "black"
     } else {
-        element.style.color = "green"
+        element.style.color = "red"
     }
 }
 
+
+
+header.addEventListener("click", function(evt){
+    toggleColor(document.querySelector("h1#header"))
+})
+
 /***** Deliverable 2 *****/
 
+
+let like = document.querySelector("p.likes")
+console.log(like)
+let num = parseInt(like.textContent)
+console.log("num:", num)
+let button = document.querySelector("button")
+
+
+button.addEventListener("click", function(evt){
+    buttonLikes = num++
+    like.textContent = `${buttonLikes} Likes`
+
+})
+
+
+
 /***** Deliverable 3 *****/
+
+const form = document.querySelector("form#new-animal-sighting-form")
+console.log(form)
+form.addEventListener("submit", function(evt){
+    
+    evt.preventDefault()
+    console.log(evt)
+   
+    const species = evt.target.species.value
+    const link = evt.target.link.value
+    const photo = evt.target.photo.value
+    const description = evt.target.description.value
+
+    const lastIndex = traveler.animalSightings.length - 1
+    const id = traveler.animalSightings[lastIndex].id + 1
+    
+    renderAnimalSightingPost({species, link, photo, description, id})
+
+})
