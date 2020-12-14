@@ -67,6 +67,68 @@ function toggleColor(element) {
     }
 }
 
+let headerH1 = document.querySelector("h1#header")
+
+// header.addEventListener("click", toggleColor)
+
+headerH1.addEventListener("click", function() {
+    toggleColor(header)
+})
+
 /***** Deliverable 2 *****/
 
+let likeButtton = document.querySelector(".like-button")
+// let likeField = document.querySelector(".likes")
+
+likeButtton.addEventListener("click", function() {
+    traveler.likes += 1
+    likes.textContent = `${traveler.likes} Likes`
+})
+
+// function increaseLike () {
+//     let likeNum = parseInt(likeField.textContent.split(" ")[0])
+//     likeNum += 1
+//     likeField.textContent = `${likeNum.toString()} Likes`
+//   }
+
 /***** Deliverable 3 *****/
+
+let newSightingForm = document.querySelector("#new-animal-sighting-form")
+
+newSightingForm.addEventListener("submit", function(evt) {
+    evt.preventDefault()
+    console.log("form submitted")
+
+    let species = document.querySelector("#animal-species").value
+    let videoLink = document.querySelector("#animal-link").value
+    let photoLink = document.querySelector("#animal-photo").value
+    let animDesc = document.querySelector("#sighting-description").value
+
+    addAnimal(species,videoLink, photoLink, animDesc)
+
+    evt.target.reset()
+})
+
+function addAnimal(species,videoLink, photoLink, animalDesc) {
+    let animalUl = document.querySelector("#animals")
+    
+    let li = document.createElement("li")
+        li.dataset.id = parseInt(animalUl.lastChild.dataset.id) + 1 
+
+    let p = document.createElement("p")
+        p.textContent = animalDesc
+        
+    
+    let a = document.createElement("a")
+        a.href = videoLink
+        a.textContent = `Here's a video about the ${species} species`
+        
+
+    let img = document.createElement("img")
+        img.src = photoLink
+        img.alt = `${species} photo`
+
+    li.append(p, img, a)
+    animalUl.append(li)
+}
+
