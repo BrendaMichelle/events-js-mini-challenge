@@ -46,7 +46,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+Replaced the document.querySelector(h1#header") in the helper function with the header variable since we already set the that varibale to the correct target. 
 ```
 
 ## Deliverable 2: Like Button
@@ -55,7 +55,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+Got stuck because I was declaring the count variable instide the block so the likes would only increment 1 time no matter how many times clicked. Once I moved the let i = 1000 out of the block, it worked.
 ```
 
 ## Deliverable 3: Add a New Animal Sighting Post
@@ -81,6 +81,6 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
-
+Because the renderAnimalSightingsPost function takes in an animal object, I decided to create a hash and had the inputs from the forms as key value pairs of that hash and then passed in the hash to the fuction. I couldn't figure out how to do id or traveler id
 ```
 
