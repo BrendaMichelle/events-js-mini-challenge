@@ -100,25 +100,36 @@ form.addEventListener("submit", function (evt) {
     const formPhoto = evt.target.querySelector('input#animal-photo').value
     const formDescription = evt.target.querySelector('textarea#sighting-description').value
 
-    const li = document.createElement("li")
-    li.dataset.id = dummyId
+    let animalObject = {}
+    animalObject.species = formSpecies 
+    animalObject.photo = formPhoto
+    animalObject.ink = formLink
+    animalObject.description = formDescription
+    animalObject.id = dummyId
+
+    renderAnimalSightingPost(animalObject)
     dummyId += 1
 
-    const p = document.createElement("p")
-    p.textContent = formDescription
+    // debugger 
+    // const li = document.createElement("li")
+    // li.dataset.id = dummyId
+    // dummyId += 1
 
-    const img = document.createElement("img")
-    img.src = formPhoto
-    img.alt = formSpecies
+    // const p = document.createElement("p")
+    // p.textContent = formDescription
 
-    const a = document.createElement("a")
-    a.href = formLink
-    a.target = "_blank"
-    a.textContent = `Here's a video about the ${formSpecies} species!`
+    // const img = document.createElement("img")
+    // img.src = formPhoto
+    // img.alt = formSpecies
 
-    li.append(p, img, a)
+    // const a = document.createElement("a")
+    // a.href = formLink
+    // a.target = "_blank"
+    // a.textContent = `Here's a video about the ${formSpecies} species!`
 
-    const animalsUl = document.querySelector("#animals")
-    animalsUl.append(li)
+    // li.append(p, img, a)
+
+    // const animalsUl = document.querySelector("#animals")
+    // animalsUl.append(li)
      
 })
