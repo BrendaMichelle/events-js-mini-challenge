@@ -110,18 +110,22 @@ newSightingForm.addEventListener("submit", function(evt) {
 
 function addAnimal(species,videoLink, photoLink, animalDesc) {
     let animalUl = document.querySelector("#animals")
-
+    
     let li = document.createElement("li")
+        li.dataset.id = parseInt(animalUl.lastChild.dataset.id) + 1 
 
     let p = document.createElement("p")
         p.textContent = animalDesc
+        
     
     let a = document.createElement("a")
         a.href = videoLink
         a.textContent = `Here's a video about the ${species} species`
+        
 
     let img = document.createElement("img")
         img.src = photoLink
+        img.alt = `${species} photo`
 
     li.append(p, img, a)
     animalUl.append(li)
