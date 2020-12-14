@@ -46,7 +46,8 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+Use header const from first part to access?
+Event listener "click"
 ```
 
 ## Deliverable 2: Like Button
@@ -55,7 +56,8 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+Can already click likes, see what starting value is (int?)
+Want the likes <p> to increase when hit likes button 
 ```
 
 ## Deliverable 3: Add a New Animal Sighting Post
@@ -81,6 +83,7 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
+I am still fuzzy on this one. I have some of the pieces down, but don't quite understand to get it functioning as a whole. 
 
 ```
 
