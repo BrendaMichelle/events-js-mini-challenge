@@ -46,7 +46,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+got it 
 ```
 
 ## Deliverable 2: Like Button
@@ -55,7 +55,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+Not sure why the likes count isn't switching to my variable and incrementing 
 ```
 
 ## Deliverable 3: Add a New Animal Sighting Post
