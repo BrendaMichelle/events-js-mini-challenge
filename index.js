@@ -3,6 +3,7 @@ const header = document.querySelector("#header")
 console.log("Here's your header:", header)
 
 
+
 /***** Deliverable 2 *****/
 header.style.color = "green"
 
@@ -59,14 +60,84 @@ animalToRemove.remove()
 /************************** EVENTS JS MINI CHALLENGE ******************************/
 
 /***** Deliverable 1 *****/
-function toggleColor(element) {
-    if (element.style.color === "green") {
-        element.style.color = "black"
+
+// header.addEventListener('click', toggleColor())
+
+function toggleColor() {
+    if (header.style.color === "green") {
+        header.style.color = "crimson"
     } else {
-        element.style.color = "green"
+        header.style.color = "green"
     }
 }
 
+header.addEventListener("click", function(){
+    toggleColor(header)
+})
+
+// header.addEventListener('click', toggleColor => {
+//     if (header.style.color = "green"){
+//         header.style.color = "crimson";
+//     } else {
+//         header.style.color = "green";
+//     }
+
+// })
+
 /***** Deliverable 2 *****/
 
+const likeButton = document.querySelector(".like-button");
+console.log("Here is the like button", likeButton);
+
+const likesnum = document.querySelector(".likes");
+
+likeButton.addEventListener('click', event =>{
+    traveler.likes++;
+    // console.log(traveler.likes);
+    likesnum.textContent = `${traveler.likes} Likes`
+})
+
+
 /***** Deliverable 3 *****/
+
+const newAnimal = document.querySelector("#new-animal-sighting-form");
+console.log(newAnimal);
+
+newAnimal.addEventListener("submit", function(evt){
+    evt.preventDefault();
+    console.log("Form submission done")
+
+    let theSpecies = evt.target.species.value
+    let thePhotoURL = evt.target.photo.value
+    let theVideoURL = evt.target.link.value
+    let theDescription = evt.target.description.value
+
+    turnAnimalToHTML(theSpecies, thePhotoURL, theVideoURL, theDescription);
+
+    evt.target.reset();
+
+})
+
+function turnAnimalToHTML(theSpecies, thePhotoURL, theVideoURL, theDescription){
+
+    const li = document.createElement("li")
+    // li.dataset.id = animalObject.id
+
+    const p = document.createElement("p")
+    p.textContent = theDescription
+
+    const img = document.createElement("img")
+    img.src = thePhotoURL
+    img.alt = theSpecies
+
+    const a = document.createElement("a")
+    a.href = theVideoURL
+    a.target = "_blank"
+    a.textContent = `Here's a video about the ${theSpecies} species!`
+
+    li.append(p, img, a)
+
+    const animalsUl = document.querySelector("#animals")
+    animalsUl.append(li)
+
+}
