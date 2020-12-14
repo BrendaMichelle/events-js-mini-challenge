@@ -58,10 +58,10 @@ animalToRemove.remove()
 
 /***** Deliverable 1 *****/
 function toggleColor(element) {
-    if (header.style.color === "green") {
-        header.style.color = "black"
+    if (element.style.color === "green") {
+        element.style.color = "black"
     } else {
-        header.style.color = "green"
+        element.style.color = "green"
     }
 }
 
@@ -80,8 +80,7 @@ function colorChange(e) {
 const btn = document.querySelector("button.like-button")
 btn.style.cursor = "pointer"
 btn.addEventListener("click", function addLike() {
-    traveler.likes++
-    likes.textContent = `${traveler.likes} Likes`
+    likes.textContent = `${traveler.likes++} Likes`
 })
 
 /***** Deliverable 3 *****/
