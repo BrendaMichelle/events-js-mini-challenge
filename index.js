@@ -2,10 +2,8 @@
 const header = document.querySelector("#header")
 console.log("Here's your header:", header)
 
-
 /***** Deliverable 2 *****/
 header.style.color = "green"
-
 
 /***** Deliverable 3 *****/
 console.log('This is what the traveler object looks like: ', traveler)
@@ -66,7 +64,52 @@ function toggleColor(element) {
         element.style.color = "green"
     }
 }
+header.addEventListener("click", colorChange)
+
+function colorChange(e) {
+    const color = header.style.color
+    header.style.cursor = "pointer"
+    header.style.color = color === 'black' ? 'red' : 'black'
+}
 
 /***** Deliverable 2 *****/
 
+const btn = document.querySelector("button.like-button")
+btn.style.cursor = "pointer"
+btn.addEventListener("click", function addLike() {
+    traveler.likes++
+    likes.textContent = `${traveler.likes} Likes`
+})
+
 /***** Deliverable 3 *****/
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("#new-animal-sighting-form")
+    // append/attatch event listeners
+    form.addEventListener('submit', function(animalObject) {
+        animalObject.preventDefault();
+        const li = document.createElement("li")
+        const animalsUl = document.querySelector("#animals")
+        li.dataset.id = parseInt(animalsUl.lastChild.dataset.id, 10) + 1
+
+        animalObject.species = form.species.value
+
+        const p = document.createElement("p")
+        p.textContent = form.description.value
+
+        const img = document.createElement("img")
+        img.src = form.photo.value
+        img.alt = `${animalObject.species} photo` 
+
+        const a = document.createElement("a")
+        a.href = form.link.value
+        a.target = "_blank"
+        a.textContent = `Here's a video about the ${animalObject.species} species!`
+
+        li.append(p, img, a)
+
+        animalsUl.append(li)
+    })
+
+});

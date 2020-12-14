@@ -46,7 +46,8 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+color === 'black' ? 'red' : 'black'
+did not know you can do this
 ```
 
 ## Deliverable 2: Like Button
@@ -55,7 +56,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+i have to remember to change likes.text content everytime I click button
 ```
 
 ## Deliverable 3: Add a New Animal Sighting Post
