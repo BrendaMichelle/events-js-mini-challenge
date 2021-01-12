@@ -46,7 +46,10 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+Referencing the earlier header variable, I was able to 
+copy+paste the code from the helper function into the event
+listener. Maybe my brain's too fried, but I was having trouble 
+calling the helper function from inside the eventListener. Apologies!
 ```
 
 ## Deliverable 2: Like Button
@@ -55,7 +58,9 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+After targeting the likerButton and the likesTotal, I was 
+able to reset the new number of numLikes each time the button
+was clicked. Would love feedback on whether it's bad practice to chain all those methods together like I did on line 76.
 ```
 
 ## Deliverable 3: Add a New Animal Sighting Post
@@ -81,6 +86,10 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
-
+After targeting the form for submitting a new animal, 
+I was able to iterate through the inputted form data and set
+its attributes to variables. After enclosing that input data
+in a "post" object, the renderAnimalSightingPost from above
+could successfully post that information to the webpage
 ```
 
