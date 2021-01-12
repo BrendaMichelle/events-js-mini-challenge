@@ -60,13 +60,59 @@ animalToRemove.remove()
 
 /***** Deliverable 1 *****/
 function toggleColor(element) {
-    if (element.style.color === "green") {
+    if (element.style.color === "red") {
         element.style.color = "black"
     } else {
-        element.style.color = "green"
+        element.style.color = "red"
     }
 }
 
+
+header.addEventListener("click", function() {
+    toggleColor(header)
+})
+    
+
 /***** Deliverable 2 *****/
 
+
+
+const likeButton = document.querySelector("button.like-button")
+
+
+likeButton.addEventListener("click", function() {
+
+    console.log("clicked")
+    const totalLikes =  parseInt(likes.textContent)
+    likes.textContent = totalLikes + 1 + " Likes"
+})
+
+
+
 /***** Deliverable 3 *****/
+
+const newAnimalForm = document.querySelector("#new-animal-sighting-form")
+
+newAnimalForm.addEventListener("submit", function(event) {
+event.preventDefault()
+
+// console.log("submit")
+
+const newSpecies = event.target.species.value
+const newVideo = event.target.link.value
+const newPhoto = event.target.photo.value
+const newDescription = event.target.description.value
+
+// console.log(newSpecies, newVideo, newPhoto, newDescription)
+
+let newAnimalSighting = {
+    id: 5,
+    species: newSpecies,
+    link: newVideo,
+    photo: newPhoto,
+    description: newDescription
+}
+
+renderAnimalSightingPost(newAnimalSighting)
+newAnimalForm.reset()
+})
