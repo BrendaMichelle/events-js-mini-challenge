@@ -60,13 +60,49 @@ animalToRemove.remove()
 
 /***** Deliverable 1 *****/
 function toggleColor(element) {
-    if (element.style.color === "green") {
+    if (element.style.color === "red") {
         element.style.color = "black"
     } else {
-        element.style.color = "green"
+        element.style.color = "red"
     }
 }
 
+header.addEventListener("click", function(){
+    toggleColor(header)
+})
+
 /***** Deliverable 2 *****/
 
+const likeButton = document.querySelector('button.like-button')
+// pulled likes variable from line 23
+likeButton.addEventListener("click", function(){
+    likes.textContent = `${traveler.likes += 1} Likes`
+})
+
+
 /***** Deliverable 3 *****/
+
+const newAnimalForm = document.querySelector('#new-animal-sighting-form')
+
+newAnimalForm.addEventListener('submit', function(event){
+    event.preventDefault()
+
+    const speciesInput = event.target.species.value
+    const videoInput = event.target.link.value
+    const imageInput = event.target.photo.value
+    const descriptionInput = event.target.description.value
+
+    const post = {
+        species: speciesInput,
+        link: videoInput,
+        photo: imageInput,
+        description: descriptionInput
+    }
+
+    newAnimalForm.reset()
+    renderAnimalSightingPost(post)
+
+})
+
+
+// HAD TO REFERENCE NOTES HARD AF TO GET LAST DELIVERABLE WORKING!!!!
