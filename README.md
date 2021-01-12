@@ -47,6 +47,8 @@ Once you have it working in the console, write an event listener that will use t
 **YOUR NOTES**
 ```
 
+I had to add .target to the original function in order for it to work with my event listener. Before adding .target, I was getting an error saying that element was undefined.
+
 ```
 
 ## Deliverable 2: Like Button
@@ -55,6 +57,8 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
+
+I assigned the relevant elements to variables, then isolated the text that needs to count up and defined a function that increases that counter by 1. Then, I added an event listener that called my function every time the heart button was clicked.
 
 ```
 
@@ -81,6 +85,8 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
+
+I first initialized an empty object, then defined a function that takes in the form input values as arguments and sets them equal to variables. Then, the function creates a new sighting object that can be passed into the renderAnimalSightingPost function. After that, I added an event listener to the submit button element to prevent its default behavior and run my function when the click event occurs.
 
 ```
 

@@ -60,13 +60,42 @@ animalToRemove.remove()
 
 /***** Deliverable 1 *****/
 function toggleColor(element) {
-    if (element.style.color === "green") {
-        element.style.color = "black"
+    if (element.target.style.color === "red") {
+        element.target.style.color = "black"
     } else {
-        element.style.color = "green"
+        element.target.style.color = "red"
     }
 }
 
+header.addEventListener("click", toggleColor)
+
 /***** Deliverable 2 *****/
+const likeButton = document.querySelector(".like-button")
+const likeCounter = document.querySelector(".likes")
+let likeNumber = parseInt(likeCounter.innerText)
+function increaseLikes() {
+    likeNumber++;
+    likeCounter.textContent = `${likeNumber} Likes`
+}
+likeButton.addEventListener("click", increaseLikes)
 
 /***** Deliverable 3 *****/
+const newSightingObject = {};
+function createSightingObject(species, video, photo, description) {
+    let speciesInput = document.getElementById("animal-species").value
+    let videoInput = document.getElementById("animal-link").value
+    let photoInput = document.getElementById("animal-photo").value 
+    let descriptionInput = document.getElementById("sighting-description").value 
+    newSightingObject.species = speciesInput;
+    newSightingObject.video = videoInput;
+    newSightingObject.photo = photoInput;
+    newSightingObject.description = descriptionInput;
+    renderAnimalSightingPost(newSightingObject)
+};
+
+const submitButton = document.querySelector("input[type='submit']")
+// submitButton.addEventListener('click', createSightingObject)
+submitButton.addEventListener('click', function (e) {
+    e.preventDefault()
+    createSightingObject()
+})
