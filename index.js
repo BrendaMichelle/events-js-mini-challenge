@@ -61,12 +61,40 @@ animalToRemove.remove()
 /***** Deliverable 1 *****/
 function toggleColor(element) {
     if (element.style.color === "green") {
-        element.style.color = "black"
+        element.style.color = "black";
+    } else if (element.style.color == "black") {
+        element.style.color = "red";
     } else {
-        element.style.color = "green"
+        element.style.color = "black";
     }
 }
 
+header.addEventListener('click', function(e) {
+    toggleColor(e.target);
+});
+
 /***** Deliverable 2 *****/
+const likeButton = document.querySelector('button');
+likeButton.addEventListener('click', function(e){
+    let likes = document.querySelector('p.likes');
+    likes.textContent = `${parseInt(likes.textContent.replace(" Likes","")) + 1} Likes`;
+});
 
 /***** Deliverable 3 *****/
+const form = document.querySelector('form');
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const speciesVal = e.target.species.value;
+    const vidLink = e.target.link.value;
+    const photoLink = e.target.photo.value;
+    const description = e.target.description.value;
+
+    const post = {
+        species: speciesVal,
+        link: vidLink,
+        photo: photoLink,
+        description: description
+    };
+    e.target.reset();
+    renderAnimalSightingPost(post);
+});
