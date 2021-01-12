@@ -95,6 +95,6 @@ form.addEventListener('submit', function(e) {
         photo: photoLink,
         description: description
     };
-    
+    e.target.reset();
     renderAnimalSightingPost(post);
 });
