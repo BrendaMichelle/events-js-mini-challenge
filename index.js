@@ -1,14 +1,25 @@
 /***** Deliverable 1 *****/
 const header = document.querySelector("#header")
-console.log("Here's your header:", header)
+// console.log("Here's your header:", header)
+
+header.addEventListener('click', function(){
+    toggleColor(header)
+})
 
 
 /***** Deliverable 2 *****/
 header.style.color = "green"
 
+const totalLikes = document.querySelector(".likes");
+const likeButton = document.querySelector(".like-button")
+
+likeButton.addEventListener('click', function(event){
+    traveler.likes++
+    totalLikes.textContent = `${traveler.likes} Likes`
+})
 
 /***** Deliverable 3 *****/
-console.log('This is what the traveler object looks like: ', traveler)
+// console.log('This is what the traveler object looks like: ', traveler)
 
 const profileImg = document.querySelector("#profile img")
 profileImg.src = traveler.photo
@@ -23,6 +34,20 @@ profileEm.textContent = traveler.nickname
 const likes = document.querySelector("#profile .likes")
 likes.textContent = `${traveler.likes} Likes`
 
+const newForm = document.querySelector('#new-animal-sighting-form')
+newForm.addEventListener('submit', function(event){
+    event.preventDefault();
+    let animalObject = {
+        traveler: 1,
+        species: event.target.species.value,
+        photo: event.target.photo.value,
+        link: event.target.link.value,
+        description: event.target.description.value
+    }
+
+    renderAnimalSightingPost(animalObject);
+    event.target.reset();
+})
 
 /***** Deliverable 4 *****/
 function renderAnimalSightingPost (animalObject) {
