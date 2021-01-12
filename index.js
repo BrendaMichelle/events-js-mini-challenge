@@ -60,10 +60,10 @@ animalToRemove.remove()
 
 /***** Deliverable 1 *****/
 function toggleColor(element) {
-    if (element.style.color === "green") {
+    if (element.style.color === "red") {
         element.style.color = "black"
     } else {
-        element.style.color = "green"
+        element.style.color = "red"
     }
 }
 
@@ -77,11 +77,13 @@ header.addEventListener("click", function() {
 
 
 
-let likeButton = document.querySelector("button.like-button")
+const likeButton = document.querySelector("button.like-button")
 
 
 likeButton.addEventListener("click", function() {
-    let totalLikes =  parseInt(likes.textContent)
+
+    console.log("clicked")
+    const totalLikes =  parseInt(likes.textContent)
     likes.textContent = totalLikes + 1 + " Likes"
 })
 
@@ -89,27 +91,28 @@ likeButton.addEventListener("click", function() {
 
 /***** Deliverable 3 *****/
 
-let newSubmit = document.querySelector("#new-animal-sighting-form")
+const newAnimalForm = document.querySelector("#new-animal-sighting-form")
 
-newSubmit.addEventListener("submit", function(evt){
-    evt.preventDefault()
+newAnimalForm.addEventListener("submit", function(event) {
+event.preventDefault()
 
-    let newSpecies = evt.target.species.value
-    let newVideo = evt.target.link.value
-    let newPhoto = evt.target.photo.value
-    let newDescription = evt.target.description.value
+// console.log("submit")
 
+const newSpecies = event.target.species.value
+const newVideo = event.target.link.value
+const newPhoto = event.target.photo.value
+const newDescription = event.target.description.value
 
- let newSighting = {
-        id: 5,
-        species: newSpecies,
-        link: newVideo,
-        photo: newPhoto,
-        description: newDescription
- }
+// console.log(newSpecies, newVideo, newPhoto, newDescription)
 
-    renderAnimalSightingPost(newSighting)
+let newAnimalSighting = {
+    id: 5,
+    species: newSpecies,
+    link: newVideo,
+    photo: newPhoto,
+    description: newDescription
+}
 
-    newSubmit.reset()
-
+renderAnimalSightingPost(newAnimalSighting)
+newAnimalForm.reset()
 })
