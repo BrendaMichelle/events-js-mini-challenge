@@ -25,7 +25,7 @@ likes.textContent = `${traveler.likes} Likes`
 
 
 /***** Deliverable 4 *****/
-function renderAnimalSightingPost (animalObject) {
+function renderAnimalSightingPost(animalObject) {
     const li = document.createElement("li")
     li.dataset.id = animalObject.id
 
@@ -60,13 +60,45 @@ animalToRemove.remove()
 
 /***** Deliverable 1 *****/
 function toggleColor(element) {
-    if (element.style.color === "green") {
+    if (element.style.color === "blue") {
         element.style.color = "black"
     } else {
-        element.style.color = "green"
+        element.style.color = "blue"
     }
 }
-
+header.addEventListener('click', function (event) {
+    toggleColor(event.target)
+})
 /***** Deliverable 2 *****/
+const likeBttn = document.querySelector('button.like-button')
+
+likeBttn.addEventListener('click', function () {
+    const pLikes = document.querySelector('p.likes')
+    let likeNum = parseInt(pLikes.textContent)
+    likeNum++
+    pLikes.textContent = `${likeNum}`
+    traveler.likes = likeNum
+})
+
+
 
 /***** Deliverable 3 *****/
+
+
+const form = document.querySelector("form#new-animal-sighting-form")
+console.log(form)
+
+form.addEventListener("submit", function (event) {
+    event.preventDefault()
+
+    const animalObject = {
+        species: event.target.species.value,
+        link: event.target.link.value,
+        photo: event.target.photo.value,
+        description: event.target.description.value
+    }
+    renderAnimalSightingPost(animalObject)
+    
+   
+
+})
