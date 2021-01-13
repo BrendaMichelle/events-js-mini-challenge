@@ -46,6 +46,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
+Don't need to use event.target because we know what we're targeting
 
 ```
 
