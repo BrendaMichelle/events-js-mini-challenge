@@ -46,7 +46,8 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+used the addEventListener click method.
+used the helper function toggleColor.
 ```
 
 ## Deliverable 2: Like Button
@@ -55,7 +56,8 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+used the addEventListener click method.
+incremented the traveler likes.
 ```
 
 ## Deliverable 3: Add a New Animal Sighting Post
@@ -81,6 +83,6 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
-
+I could not get to the last deliverable on time.  
 ```
 

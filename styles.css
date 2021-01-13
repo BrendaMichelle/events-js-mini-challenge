@@ -3,6 +3,10 @@
     margin: 1rem;
 }
 
+#h1.red {
+    --color:red;
+}
+
 img {
     height: 300px;
 }
@@ -28,6 +32,7 @@ li a {
 #header {
     text-align: center;
 }
+
 
 #new-animal-sighting-form input {
     display: block;

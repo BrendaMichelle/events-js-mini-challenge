@@ -1,11 +1,3 @@
-/***** Deliverable 1 *****/
-const header = document.querySelector("#header")
-console.log("Here's your header:", header)
-
-
-/***** Deliverable 2 *****/
-header.style.color = "green"
-
 
 /***** Deliverable 3 *****/
 console.log('This is what the traveler object looks like: ', traveler)
@@ -20,8 +12,8 @@ profileH2.textContent = traveler.name
 const profileEm = document.querySelector("#profile em")
 profileEm.textContent = traveler.nickname
 
-const likes = document.querySelector("#profile .likes")
-likes.textContent = `${traveler.likes} Likes`
+// const likes = document.querySelector("#profile .likes")
+// likes.textContent = `${traveler.likes} Likes`
 
 
 /***** Deliverable 4 *****/
@@ -55,18 +47,29 @@ traveler.animalSightings.forEach(function (animalSightinObject) {
 const animalToRemove = document.querySelector("[data-id='3'")
 animalToRemove.remove()
 
+
 /***** End of Starter Code *****/
 /************************** EVENTS JS MINI CHALLENGE ******************************/
 
 /***** Deliverable 1 *****/
-function toggleColor(element) {
-    if (element.style.color === "green") {
-        element.style.color = "black"
-    } else {
-        element.style.color = "green"
-    }
-}
+// const header = document.querySelector("#header")
+const header = document.querySelector("#header");
+console.log("Here's your header:", header)
+
+
+header.addEventListener('click', function() {
+    toggleColor(header)
+}) 
+
 
 /***** Deliverable 2 *****/
 
-/***** Deliverable 3 *****/
+header.style.color = "green"
+
+const likes = document.querySelector("#profile .likes")
+likes.textContent = `${traveler.likes} Likes`
+
+likes.addEventListener('click', function(){
+    traveler.likes += 1
+    likes.textContent = `${traveler.likes} Likes`
+})
