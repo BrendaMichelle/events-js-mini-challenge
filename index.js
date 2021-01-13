@@ -3,6 +3,8 @@ const header = document.querySelector("#header")
 console.log("Here's your header:", header)
 
 
+
+
 /***** Deliverable 2 *****/
 header.style.color = "green"
 
@@ -59,14 +61,52 @@ animalToRemove.remove()
 /************************** EVENTS JS MINI CHALLENGE ******************************/
 
 /***** Deliverable 1 *****/
+
 function toggleColor(element) {
     if (element.style.color === "green") {
         element.style.color = "black"
-    } else {
-        element.style.color = "green"
+    } else if (element.style.color == 'black') {
+        element.style.color = "red"
+    } else if (element.style.color == "red") {
+        element.style.color = "black"
     }
 }
 
+header.addEventListener('click', function(event){
+    toggleColor(event.target)
+})
+
 /***** Deliverable 2 *****/
+let likeButton = document.querySelector('.like-button')
+// let likes = document.querySelector('#profile .likes') Already declared
+    
+likeButton.addEventListener('click', function(){
+   
+    likes.textContent = `${traveler.likes += 1} Likes`
+    
+})
+
 
 /***** Deliverable 3 *****/
+
+let newForm = document.querySelector('#new-animal-sighting-form')
+
+newForm.addEventListener('submit', function(event){
+    event.preventDefault()
+
+    let newSpecies =  event.target.species.value
+    let newVideo = event.target.link.value
+    let newPhoto = event.target.photo.value
+    let newDesc = event.target.description.value
+
+    let post = {
+        species: newSpecies,
+        link: newVideo,
+        photo: newPhoto,
+        description: newDesc
+    }
+
+    renderAnimalSightingPost(post)
+    newForm.reset()
+
+})
