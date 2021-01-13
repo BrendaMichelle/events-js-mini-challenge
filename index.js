@@ -84,21 +84,23 @@ likeBttn.addEventListener('click', function () {
 
 /***** Deliverable 3 *****/
 
+const animalForm = document.querySelector('#new-animal-sighting-form')
 
-const form = document.querySelector("form#new-animal-sighting-form")
-console.log(form)
+animalForm.addEventListener('submit', function(event) {
 
-form.addEventListener("submit", function (event) {
     event.preventDefault()
 
-    const animalObject = {
-        species: event.target.species.value,
-        link: event.target.link.value,
-        photo: event.target.photo.value,
-        description: event.target.description.value
-    }
-    renderAnimalSightingPost(animalObject)
-    
-   
+    const speciesInput = animalForm.species.value
+    const videoInput = animalForm.link.value
+    const photoInput = animalForm.photo.value
+    const descInput = animalForm.description.value
 
-})
+    const newAniPost = {
+        species: speciesInput,
+        link: videoInput,
+        photo: photoInput,
+        description: descInput
+    }
+    renderAnimalSightingPost(newAniPost)
+    
+}) 
