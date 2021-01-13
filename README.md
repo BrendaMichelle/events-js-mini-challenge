@@ -46,7 +46,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+Had help from Jason and Erwin, they guided me without giving the answer
 ```
 
 ## Deliverable 2: Like Button
@@ -55,7 +55,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+Had help from Jason, He guided me without giving the answer. We also went over a few different ways to accomplish this 
 ```
 
 ## Deliverable 3: Add a New Animal Sighting Post
@@ -81,6 +81,7 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
+I followed along with the end of the Events lecture video from yesterday to get this one. It wasn't as hard as the other two for me. 
 
 ```
 

@@ -59,14 +59,78 @@ animalToRemove.remove()
 /************************** EVENTS JS MINI CHALLENGE ******************************/
 
 /***** Deliverable 1 *****/
-function toggleColor(element) {
-    if (element.style.color === "green") {
-        element.style.color = "black"
+// function toggleColor(element) {
+//     if (element.style.color === "green") {
+//         element.style.color = "black"
+//     } else {
+//         element.style.color = "green"
+//     }
+// }
+
+const toggleColor = document.querySelector("h1#header")
+
+toggleColor.addEventListener('click', function (element) {
+    if (element.target.style.color === "green") {
+        element.target.style.color = "black"
+    } else if (element.target.style.color === "black") {
+        element.target.style.color = "red"
     } else {
-        element.style.color = "green"
+        element.target.style.color = "black"
     }
-}
+    // debugger
+    // document.header.classList.toggle('header')
+
+})
+
+
 
 /***** Deliverable 2 *****/
 
+const liker = document.querySelector("button.like-button")
+
+liker.addEventListener('click', function (e) {
+    const likes = document.querySelector("p.likes")
+    //likes.textContent = `${parseInt(likes.textContent.replace(" Likes", "")) + 1 } Likes` 
+    likes.textContent = `${traveler.likes += 1} Likes` 
+})
+
 /***** Deliverable 3 *****/
+
+const animalSightingForm = document.querySelector("form#new-animal-sighting-form")
+
+animalSightingForm.addEventListener('submit', function (event) {
+    event.preventDefault()
+    // animalSightingForm.querySelector("input[type='text']").value
+    // event.target[0].value
+
+    // event.target.species.value
+    // event.target.link.value
+    // event.target.photo.value
+    // event.target.description.value
+    // debugger
+
+    // Get input fields from form: 
+
+    const animalSpecies =  event.target.species.value
+    const animalVidLink = event.target.link.value
+    const animalPhotoLink = event.target.photo.value
+    const animalDescription = event.target.description.value
+
+    // DOM Manipulation:
+
+    const post = {
+        id: animalSightingForm,
+        species: animalSpecies,
+        photo: animalVidLink,
+        link: animalPhotoLink,
+        description: animalDescription
+    }
+    
+    renderAnimalSightingPost(post)
+
+    event.target.reset()
+
+    // WATCHED THE LECTURE VIDEO FOR HELP 
+
+})
+
