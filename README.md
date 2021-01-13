@@ -46,7 +46,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+Tried to work with the original code provided, which confused me at first. I quickly realized I had to customize the condition then just set the event after. 
 ```
 
 ## Deliverable 2: Like Button
@@ -55,7 +55,8 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+Raffy deserves all the likes!
+Was scared at first then it was actually more straight forward than expected. Simple Update +1
 ```
 
 ## Deliverable 3: Add a New Animal Sighting Post
@@ -81,6 +82,6 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
-
+lol potato.png
 ```
 
