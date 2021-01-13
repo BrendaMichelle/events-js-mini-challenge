@@ -1,10 +1,10 @@
 /***** Deliverable 1 *****/
-const header = document.querySelector("#header")
-console.log("Here's your header:", header)
+const header = document.querySelector("#header");
+console.log("Here's your header:", header);
 
 
 /***** Deliverable 2 *****/
-header.style.color = "green"
+header.style.color = "green";
 
 
 /***** Deliverable 3 *****/
@@ -59,14 +59,49 @@ animalToRemove.remove()
 /************************** EVENTS JS MINI CHALLENGE ******************************/
 
 /***** Deliverable 1 *****/
+const toggle = document.querySelector("h1#header")
+toggle.addEventListener('click', function(e) {
+    toggleColor(e.target);
+})
 function toggleColor(element) {
     if (element.style.color === "green") {
-        element.style.color = "black"
-    } else {
-        element.style.color = "green"
+        element.style.color = "black";
+    } 
+    else if(element.style.color === "black"){
+        element.style.color = "red";
+    }
+    else{
+        element.style.color = "black";
     }
 }
 
 /***** Deliverable 2 *****/
 
+const likeButton = document.querySelector("button")
+likeButton.addEventListener("click", function() {
+    const likes = document.querySelector("p.likes")
+    likes.textContent = `${traveler.likes+= 1} Likes`
+});
+
 /***** Deliverable 3 *****/
+
+const form = document.querySelector("form")
+form.addEventListener('submit', function(event) {
+    event.preventDefault()
+
+    const speciesInput = event.target.species.value
+    const videoInput = event.target.link.value
+    const photoInput = event.target.photo.value
+    const descInput = event.target.description.value
+
+    const post = {
+        species: speciesInput,
+        video: videoInput,
+        photo: photoInput,
+        description: descInput
+    }
+
+    renderAnimalSightingPost(post)
+
+    event.target.reset()
+})
