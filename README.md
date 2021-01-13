@@ -46,6 +46,9 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
+1. select which element we want to listen for event on --> header (already defined with 'header')
+- add an event listener, where we tell it what kind of event we are listing for ('click')
+- tell the event listener what to do when 'header' is 'clicked' --> toggleColor
 
 ```
 
@@ -55,6 +58,10 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
+1. select the like button using getElementsByClassName and [] notation --> set to const likeBtn
+2. select p element to change using querySelector and set to const likePar (line 23)
+3. chain into likePar to get innerHTML integer and set to variable('let') numOfLikes --> going to need to parseInt
+4. add event listener to likeBtn and interpolate with numOfLikes incremented by one
 
 ```
 
@@ -66,7 +73,7 @@ Our app is already displaying some great animal sightings (check out the starter
 
 The data won't persist (when you refresh the page, the new animal sighting post won't show up) - we'll see how to fix this later on. For now, focus on getting the new post of an animal sighting on the page when the form is submitted!
 
-You're encouraged to seek out a photo online and video video on YouTube, but if you'd like, here's an example photo and video you can use for testing purposes:
+You're encouraged to seek out a photo online and video on YouTube, but if you'd like, here's an example photo and video you can use for testing purposes:
 
 - Photo: pics/birds.jpg
 - Link: https://youtu.be/VvMqSBcl2bE
@@ -81,6 +88,16 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
+1. select element to listen for event on --> #new-animal-sighting-form
+   - listening for 'submit' event
+2. set event listener on animalForm (give argument of 'event' for default and reset)
+   - prevent default behavior
+   - access user input --> 
+   document.querySelector("#new-animal-sighting-form").name.value
+   - set variable thats equal to construction of new post using user input values
+   - invoke renderAnimalSightingPost(newPost)
+   - reset form fields
+
 
 ```
 
