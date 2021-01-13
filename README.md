@@ -46,7 +46,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+Identified the element I wanted to target for my event, attached an event listener, and used "click" as the first argument, and my helper function as my second argument. The helper function takes the event object as its argument, and in order to make sure we're making the change on the correct element we need to specify the target attribute of the event in the function body.
 ```
 
 ## Deliverable 2: Like Button
@@ -55,7 +55,10 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+-- Indentified the element that I was going to "listen" to and assigned it to a variable
+-- Added an event listener 
+-- Event listener function argument identifies where the likes are displayed and also where the number of likes is stored (assign this to a variable counter where the value increases each time the button is clicked). 
+-- String interpolate the number of likes to the likes display
 ```
 
 ## Deliverable 3: Add a New Animal Sighting Post
@@ -81,6 +84,11 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
-
+-- Defined a variable with the value of the form element
+--Made a new event listener for that form element, looking for a submit event
+-- Inside the event listener callback function, assigned variables to all the values I wanted to get from the submitted form
+-- assigned a variable to a new sighting object where the values would be equal to the values submitted in the form
+-- rendered the new sighting using the object just created
+-- make sure to prevent default behavior inside the callback function so that the page doesn't reload
 ```
 
