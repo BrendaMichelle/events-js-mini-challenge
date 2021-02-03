@@ -59,14 +59,44 @@ animalToRemove.remove()
 /************************** EVENTS JS MINI CHALLENGE ******************************/
 
 /***** Deliverable 1 *****/
-function toggleColor(element) {
-    if (element.style.color === "green") {
-        element.style.color = "black"
-    } else {
-        element.style.color = "green"
+
+
+header.addEventListener('click', function(event){
+
+    function toggleColor(header) {
+        if (header.style.color === "green") {
+            header.style.color = "black"
+        } else {
+            header.style.color = "green"
+        }
     }
-}
+    console.log(toggleColor(header))
+})
+
+
 
 /***** Deliverable 2 *****/
+
+const likeBtn = document.querySelector('.like-button') 
+  
+
+likeBtn.addEventListener('click', function(event){
+   
+    // convert string to text
+
+    num = parseInt(likes.innerText)
+
+    // start counter by adding 1 
+    counter = num + 1
+    // increment counter
+    value = counter++
+
+    likes.innerText = value
+
+    console.log(event)
+
+})
+
+
 
 /***** Deliverable 3 *****/
