@@ -67,6 +67,29 @@ function toggleColor(element) {
     }
 }
 
+header.addEventListener("click", event => toggleColor(event.target))
 /***** Deliverable 2 *****/
 
+const likeButton = document.querySelector(".like-button")
+
+addLike = _ => {
+    traveler.likes ++
+    likes.textContent = `${traveler.likes} Likes`
+}
+
+likeButton.addEventListener('click', addLike)
+
+
 /***** Deliverable 3 *****/
+const form = document.querySelector('#new-animal-sighting-form')
+form.addEventListener('submit', event => {
+    event.preventDefault()
+    let newSighting = {
+        id: parseInt(animals.lastChild.dataset.id) + 1,
+        species: form.species.value,
+        description: form.description.value,
+        photo: form.photo.value,
+        link: form.link.value
+    }
+    renderAnimalSightingPost (newSighting)
+})
