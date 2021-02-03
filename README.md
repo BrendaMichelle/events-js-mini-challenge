@@ -46,7 +46,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+Add an event listener for header, using a callback with an event argument that invokes the helper method toggleColor on event.target
 ```
 
 ## Deliverable 2: Like Button
@@ -55,7 +55,8 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+Write a function like() which increments traveler.likes by one and re-renderes the number of likes in the page's likes.textContent
+Grab the like button from the page using document.querySelector( "button.like-button" ), then add an event listener for the like button that calls back to like() whenever the like button is clicked
 ```
 
 ## Deliverable 3: Add a New Animal Sighting Post
@@ -81,6 +82,10 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
-
+Grab the form for a new animal sighting with document.getElementById( "new-animal-sighting-form" )
+Write a function addSighting() that takes a form submission event as an argument and prevents its default behavior
+addSighting creates a new sighting object with appropriate keys/values taken from traveler.animalSightings and submission.target.value (user entires in the submission form)
+addSighting then calls the method renderAnimalSightingPost with the newly-created sighting to render it on the DOM, push()es the new sighting onto traveler.animalSightings, and clears all input fields in the form with reset()
+Add an event listener for the form that calls back to addSighting whenever the form's submit button is activated
 ```
 

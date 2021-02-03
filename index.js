@@ -67,6 +67,33 @@ function toggleColor(element) {
     }
 }
 
+header.addEventListener( "click", event => toggleColor( event.target ) );
+
 /***** Deliverable 2 *****/
+function like() {
+    traveler.likes++;
+    likes.textContent = `${traveler.likes} Likes`;
+}
+
+const likeButton = document.querySelector( "button.like-button" );
+likeButton.addEventListener( "click", like );
 
 /***** Deliverable 3 *****/
+const newSightingForm = document.getElementById( "new-animal-sighting-form" );
+
+function addSighting( submission ) {
+    submission.preventDefault();
+    let newSighting = {
+        id: traveler.animalSightings.length + 1,
+        travelerId: traveler.id,
+        species: submission.target[ 0 ].value,
+        link: submission.target[ 1 ].value,
+        photo: submission.target[ 2 ].value,
+        description: submission.target[ 3 ].value,
+    };
+    renderAnimalSightingPost( newSighting );
+    traveler.animalSightings.push( newSighting );
+    newSightingForm.reset();
+}
+
+newSightingForm.addEventListener( "submit", addSighting );
