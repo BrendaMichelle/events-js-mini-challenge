@@ -93,18 +93,3 @@ form.addEventListener('submit', event => {
     }
     renderAnimalSightingPost (newSighting)
 })
-
-// renderAnimalSightingPost (animalObject)
-// const li = document.createElement("li")
-// li.dataset.id = animalObject.id
-
-// const p = document.createElement("p")
-// p.textContent = animalObject.description
-
-// const img = document.createElement("img")
-// img.src = animalObject.photo
-// img.alt = animalObject.species
-
-// const a = document.createElement("a")
-// a.href = animalObject.link
-// a.target = "_blank"
