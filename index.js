@@ -2,7 +2,6 @@
 const header = document.querySelector("#header")
 console.log("Here's your header:", header)
 
-
 /***** Deliverable 2 *****/
 header.style.color = "green"
 
@@ -59,6 +58,10 @@ animalToRemove.remove()
 /************************** EVENTS JS MINI CHALLENGE ******************************/
 
 /***** Deliverable 1 *****/
+header.addEventListener('click', function() {
+    toggleColor(header)
+})
+
 function toggleColor(element) {
     if (element.style.color === "green") {
         element.style.color = "black"
@@ -68,5 +71,38 @@ function toggleColor(element) {
 }
 
 /***** Deliverable 2 *****/
+const likeButton = document.querySelector(".like-button")
+
+likeButton.addEventListener(`click`, function() {
+    likeButtonPress()
+})
+
+function likeButtonPress() {
+  traveler.likes++
+  document.querySelector(".likes").textContent = `${traveler.likes} Likes`
+}
 
 /***** Deliverable 3 *****/
+const form = document.querySelector("#new-animal-sighting-form")
+form.addEventListener('submit', function(event) {
+    event.preventDefault()
+    const formSpecies = document.querySelector("#animal-species").value
+    const formLink = document.querySelector("#animal-link").value
+    const formPhoto = document.querySelector("#animal-photo").value
+    const formDescription = document.querySelector("#sighting-description").value
+    const formId = traveler.animalSightings.length++
+
+    const newAnimalObject = {
+        id: formId,
+        travelerId: 1,
+        species: formSpecies,
+        photo: formPhoto,
+        link: formLink,
+        description: formDescription
+    }
+
+renderAnimalSightingPost(newAnimalObject)
+event.target.reset()
+
+})
+

@@ -46,7 +46,8 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+Add an event listerner to what will be clicking on, the header
+Type is 'click' and the callback function should invoke toggleColor passing Header as the element
 ```
 
 ## Deliverable 2: Like Button
@@ -55,7 +56,11 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
+Selected the like-button class and assigned it a variable
+Added an event listner on click to the like-button class variable
+Created a function that would increment likes when called and render the updated likes from the backend, because simply updating the information wouldn't change what is displayed.
 
+*NOTE* with different backend circumstances simply incrementing the traveler.likes would suffice but the display is pulling from static information in the data.js so we need to render over that display.
 ```
 
 ## Deliverable 3: Add a New Animal Sighting Post
@@ -81,6 +86,26 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
+Select the entire submit form
+Add event listerner for the submit
+Pass in the event to the function so we can preventDefault of the event (stops the form from sending a 'post' request)
 
+Select each area of input and retrieve its value this will be whatever input is in the form at submission
+
+The id will be the length of our animalObject array ++ because that would be the last number plus 1
+
+*we should push new items into this array as well but that wont update anything because of how our backend is setup in this lab*
+
+Now in order to use the renderAnimalSightingPost we need to convert the submit form data into an animalObject
+
+Just take the selected values and assign them to a newAnimalObject with the corresponding key value pairs
+
+For the travelerId we use 1 because there is only 1 traveler right now
+
+Now we can call renderAnimalSightingPost and pass the newAnimalObject as the parameter
+
+This creates the html to render the results on screen
+
+Event.target.reset() should reset the submit form after the render
 ```
 
