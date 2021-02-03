@@ -2,7 +2,6 @@
 const header = document.querySelector("#header")
 console.log("Here's your header:", header)
 
-
 /***** Deliverable 2 *****/
 header.style.color = "green"
 
@@ -67,6 +66,55 @@ function toggleColor(element) {
     }
 }
 
+
+header.addEventListener('click', function (event) {
+    toggleColor(event.target)
+})
+
 /***** Deliverable 2 *****/
+const likeButton = document.querySelector("button.like-button")
+
+
+function addALike(element) {
+    let likes = document.querySelector("p.likes")
+    likeNumber = likes.textContent.split(' ')[0]
+    integer = parseInt(likeNumber, 10)
+    newNumber = (integer + 1)
+    likes.textContent = `${newNumber} Likes`
+}
+
+
+likeButton.addEventListener('click', function (event) {
+    addALike(event.target)
+})
 
 /***** Deliverable 3 *****/
+
+const form = document.querySelector('form#new-animal-sighting-form')
+form.addEventListener('submit', function (event) {
+    event.preventDefault()
+    const inputFieldOne = event.target.species.value
+    const inputFieldTwo = event.target.link.value
+    const inputFieldThree = event.target.photo.value
+    const inputFieldFour = event.target.description.value
+
+    const lastId = traveler.animalSightings[traveler.animalSightings.length - 1].id
+
+
+    const animalSighting = {
+        id: lastId + 1,
+        species: inputFieldOne,
+        link: inputFieldTwo,
+        photo: inputFieldThree,
+        description: inputFieldFour,
+        likes: 0
+    }
+
+    traveler.animalSightings.push(animalSighting)
+
+    renderAnimalSightingPost (animalSighting)
+
+    // form.reset()
+    event.target.reset()
+
+})

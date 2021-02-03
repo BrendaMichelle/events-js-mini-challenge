@@ -46,7 +46,10 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+We go through the three steps:
+What element do we want to listen to? In this case the already defined header from previous in the lab.
+What kind of event are we listening for, in this case a click.
+Then what do we want to happen? (What function do we want to run) in this case use the toggleColor function that was also defined. 
 ```
 
 ## Deliverable 2: Like Button
@@ -55,7 +58,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+Probably not the best way to go about this, but upon clicking on the like a function was made that found the likes text seperated it from the word likes, added one to it, rejoined them and updated the text to it. Then the function is ran when you click on the heart
 ```
 
 ## Deliverable 3: Add a New Animal Sighting Post
@@ -81,6 +84,12 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
-
+Borrowing straight from yesterday we (I've been doing this nosism thing for the labs I do just me I did this but whatever consistency!) first located the whole form(not the submit button) set it to a constant form. on that form added the eventListener to look for an action of function. We prevented the default of the page refreshing. 
+Then we set the constants of the form using the HTML input elements.
+Then added the id number since we don't have persistence to get it otherwise. -1 because of the 0 start
+then created a new animal sighting using the constants we pulled from the form.
+Pushed it into the array
+rendered it using the previous method in the lab
+Then rest the forms
 ```
 
