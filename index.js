@@ -3,8 +3,9 @@ const header = document.querySelector("#header")
 console.log("Here's your header:", header)
 
 
+
 /***** Deliverable 2 *****/
-header.style.color = "green"
+header.style.color = "red"
 
 
 /***** Deliverable 3 *****/
@@ -60,13 +61,49 @@ animalToRemove.remove()
 
 /***** Deliverable 1 *****/
 function toggleColor(element) {
-    if (element.style.color === "green") {
+    if (element.style.color === "red") {
         element.style.color = "black"
     } else {
-        element.style.color = "green"
+        element.style.color = "red"
     }
 }
 
+const button = document.querySelector('h1#header');
+button.addEventListener('click', function() {
+    toggleColor(button)
+})
+  // button.toggleColor(document.querySelector("h1#header"));
+// document.getElementById(“myBtn”).addEventListener(“click”, function() {
+//   this.style.backgroundColor = “red”;
+// });
+
 /***** Deliverable 2 *****/
+//
+// function createCounterFunc() {
+//     let counter = 0
+//     return function () {
+//         counter++
+//     }
+// }
+
+
+const likeButton = document.querySelector('button.like-button')
+
+likeButton.addEventListener('click', function() {
+    (traveler.likes = traveler.likes + 1)
+    likes.textContent = `${traveler.likes} Likes`
+
+})
+
+
+
+
+
+
+
+
+
+
+
 
 /***** Deliverable 3 *****/
