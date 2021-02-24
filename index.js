@@ -94,7 +94,6 @@ form.addEventListener("submit", function(event) {
     const secondInput = event.target[1].value
     const thirdInput = event.target[2].value
     const fourthInput = event.target[3].value
-
     const animalObject = {
         species: firstInput,
         link: secondInput,
