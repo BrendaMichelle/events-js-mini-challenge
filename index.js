@@ -7,6 +7,7 @@ console.log("Here's your header:", header)
 header.style.color = "green"
 
 
+
 /***** Deliverable 3 *****/
 console.log('This is what the traveler object looks like: ', traveler)
 
@@ -25,7 +26,7 @@ likes.textContent = `${traveler.likes} Likes`
 
 
 /***** Deliverable 4 *****/
-function renderAnimalSightingPost (animalObject) {
+function renderAnimalSightingPost(animalObject) {
     const li = document.createElement("li")
     li.dataset.id = animalObject.id
 
@@ -60,13 +61,39 @@ animalToRemove.remove()
 
 /***** Deliverable 1 *****/
 function toggleColor(element) {
-    if (element.style.color === "green") {
+    if (element.style.color === "red") {
         element.style.color = "black"
     } else {
-        element.style.color = "green"
+        element.style.color = "red"
     }
 }
+header.addEventListener("click", function (event) {
+    toggleColor(header)
+})
 
 /***** Deliverable 2 *****/
+const likeButton = document.querySelector(".like-button")
+likeButton.addEventListener("click", function (event) {
+    let likes = document.querySelector("p.likes").textContent.replace(" Likes", "")
+    likes = parseInt(likes) + 1
+    document.querySelector("p.likes").textContent = likes + " Likes"
+})
 
 /***** Deliverable 3 *****/
+const form = document.querySelector("#new-animal-sighting-form")
+
+form.addEventListener("submit", function (event) {
+    event.preventDefault()
+    let animal = {}
+    animal.id = 5
+    animal.travelerId = 1
+    animal.species = event.target.species.value
+    animal.photo = event.target.photo.value
+    animal.link = event.target.link.value
+    animal.description = event.target.description.value
+    renderAnimalSightingPost(animal)
+})
+
+
+
+
