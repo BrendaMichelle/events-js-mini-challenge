@@ -47,6 +47,8 @@ Once you have it working in the console, write an event listener that will use t
 **YOUR NOTES**
 ```
 
+Using the helper fucntion we were able to get the color to change with a click. We needed to change the color to red to get the code to work. 
+
 ```
 
 ## Deliverable 2: Like Button
@@ -55,6 +57,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
+Using an event listner we changed the likes and updated the likes with textContent. 
 
 ```
 
@@ -81,6 +84,6 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
-
+We set the values for the input feilds to variables, then set those variables to an array with the appropriate values. We then used the helper fucntion given to us to make a new post. 
 ```
 
