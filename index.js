@@ -85,3 +85,33 @@ likeButton.addEventListener("click", function() {
 
 
 /***** Deliverable 3 *****/
+
+const form = document.querySelector("form")
+
+form.addEventListener('submit', function (event){
+    event.preventDefault()
+    const firstInput = event.target.species.value
+    const secondInput = event.target.link.value
+    const thirdInput = event.target.photo.value
+    const fourthInput = event.target.description.value
+
+    // const firstInput = event.target.title.value
+    // const secondInput = event.target.author.value
+
+    // querySelect the input field, call .value on the element
+    animalSightings = traveler.animalSightings
+    const lastId = animalSightings[animalSightings.length - 1].id
+    const newId = lastId + 1
+
+    const animalObject = {
+        id: newId,
+        species: firstInput,
+        link: secondInput,
+        photo: thirdInput,
+        description: fourthInput,
+        
+    }
+    renderAnimalSightingPost(animalObject)
+    event.target.reset()
+})
+    
