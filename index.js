@@ -98,12 +98,28 @@ likeButton.addEventListener('click', function() {
 
 
 
-
-
-
-
-
-
-
-
 /***** Deliverable 3 *****/
+const form = document.querySelector("#new-animal-sighting-form")
+form.addEventListener('submit', function (event) {
+    event.preventDefault()
+    const firstInput = event.target[0].value
+    const secondInput = event.target[1].value
+    const thirdInput = event.target[2].value
+    const fourthInput = event.target[3].value
+
+    // const firstInput = event.target.title.value
+    // const secondInput = event.target.author.value
+
+    const animalObj = {
+        id: 1,
+        species: firstInput,
+        link: secondInput,
+        photo: thirdInput,
+        description: fourthInput
+    }
+
+    renderAnimalSightingPost(animalObj)
+    event.target.reset()
+
+
+})
