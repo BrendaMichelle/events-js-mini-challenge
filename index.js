@@ -67,6 +67,21 @@ function toggleColor(element) {
     }
 }
 
+header.addEventListener("click", function() {
+    toggleColor(header)
+} )
+
+
+toggleColor(document.querySelector("h1#header"))
 /***** Deliverable 2 *****/
+
+const likeButton = document.querySelector('button.like-button')
+
+likeButton.addEventListener("click", function() {
+    traveler.likes ++
+    likes.textContent = `${traveler.likes} Likes`
+} )
+
+
 
 /***** Deliverable 3 *****/
