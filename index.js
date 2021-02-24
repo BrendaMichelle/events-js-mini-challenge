@@ -67,6 +67,50 @@ function toggleColor(element) {
     }
 }
 
+const headerColor = document.querySelector('h1#header')
+
+// unable to click on header in broswer -- toggleColor(headercColor) works in console 
+headerColor.addEventListener('click', function () { 
+
+    toggleColor(headerColor)
+
+})
+
+
+
 /***** Deliverable 2 *****/
 
+
+function increaseLikes() {
+    traveler.likes++
+    likes.textContent = `${traveler.likes} Likes`
+}
+
+const likeButton = document.querySelector('button.like-button')
+
+likeButton.addEventListener('click', increaseLikes)
+
 /***** Deliverable 3 *****/
+
+const form = document.querySelector('form')
+
+form.addEventListener('submit', function (event) {
+    event.preventDefault()
+    const firstInput = event.target[0].value
+    const secondInput = event.target[1].value
+    const thirdInput = event.target[2].value
+    const fourthInput = event.target[3].value
+
+    const sightingObj = {
+
+        id: traveler.animalSightings.length+1,
+        species: firstInput,
+        photo: secondInput,
+        link: thirdInput,
+        description: fourthInput
+
+    }
+    renderAnimalSightingPost(sightingObj)
+    event.target.reset()
+    
+})
