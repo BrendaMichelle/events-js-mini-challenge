@@ -3,6 +3,7 @@ const header = document.querySelector("#header")
 console.log("Here's your header:", header)
 
 
+
 /***** Deliverable 2 *****/
 header.style.color = "green"
 
@@ -60,13 +61,50 @@ animalToRemove.remove()
 
 /***** Deliverable 1 *****/
 function toggleColor(element) {
-    if (element.style.color === "green") {
+    if (element.style.color === "red") {
         element.style.color = "black"
     } else {
-        element.style.color = "green"
+        element.style.color = "red"
     }
 }
 
+header.addEventListener('click', function(){
+    toggleColor(header)
+})
+
+
 /***** Deliverable 2 *****/
+const lButton= document.querySelector('button')
+
+function increase() {
+    likes.textContent = `${traveler.likes+=1} Likes`
+}
+
+
+lButton.addEventListener('click', function(){
+increase(lButton)
+})
 
 /***** Deliverable 3 *****/
+const form= document.querySelector('form')
+
+form.addEventListener('submit', function(event){
+    event.preventDefault()
+    const input1= event.target[0].value
+    const input2= event.target[1].value
+    const input3= event.target[2].value
+    const input4= event.target[3].value
+
+    const lId= traveler.animalSightings[traveler.animalSightings.length -1].id
+    const nId= lId+1
+
+    const animalObj= {
+        id: nId, 
+        species: input1,
+        link: input2,
+        photo: input3,
+        description: input4
+    }
+    renderAnimalSightingPost(animalObj)
+    event.target.reset()
+})
