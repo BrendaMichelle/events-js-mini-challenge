@@ -59,14 +59,56 @@ animalToRemove.remove()
 /************************** EVENTS JS MINI CHALLENGE ******************************/
 
 /***** Deliverable 1 *****/
-function toggleColor(element) {
-    if (element.style.color === "green") {
-        element.style.color = "black"
+
+const toggleHeaderColor = document.querySelector("h1#header")
+
+toggleHeaderColor.addEventListener('click', function (event) {
+    if (toggleHeaderColor.style.color === "green") {
+        toggleHeaderColor.style.color = "black"
     } else {
-        element.style.color = "green"
+        toggleHeaderColor.style.color = "green"
     }
 }
+)
 
 /***** Deliverable 2 *****/
 
+const addLike = document.querySelector("button.like-button")
+let count = document.querySelector("p.likes")
+addLike.addEventListener('click', function (event) {
+    count++
+//Not sure if the above is corret in how you would add a 'like'.
+
+})
+
 /***** Deliverable 3 *****/
+
+const form = document.querySelector('form#new-animal-sighting-form')
+
+form.addEventListener('submit', function (event){
+    event.preventDefault()
+
+    const inputFieldOne = event.target[0].value
+    const inputFieldTwo = event.target[1].value
+    const inputFieldThree = event.target[2].value 
+    const inputFieldFour = event.target[3].value
+
+    const newAnimalSighting = {
+
+        species: inputFieldOne,
+        video: inputFieldTwo,
+        photo: inputFieldThree,
+        description: inputFieldFour,
+        id: traveler.animalSightings[traveler.animalSightings.length - 1].id + 1
+    }
+    traveler.animalSightings.push(newAnimalSighting)
+    renderAnimalSightingPost(newAnimalSighting)
+
+})
+
+// used the following info to test the new animal sighting;
+
+// species: green anaconda
+// video link: https://www.youtube.com/watch?v=F000UK_kUq4
+// photo link: https://i.natgeofe.com/n/26523bf9-bbae-4e2c-a2bc-eee44f5ed376/green-anaconda.jpg
+// description: a big snake
