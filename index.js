@@ -67,6 +67,42 @@ function toggleColor(element) {
     }
 }
 
+header.addEventListener("click", function() {
+    toggleColor(header)
+})
+
+
+
 /***** Deliverable 2 *****/
 
+const button = document.querySelector('button#like-button')
+
+    button.addEventListener('click', function() {
+
+    console.log("clicked")
+
+    const totalLikes =  parseInt(likes.textContent)
+    likes.textContent = totalLikes + 1 + " Likes"
+})
+
+
 /***** Deliverable 3 *****/
+
+const newAnimalForm = document.querySelector("#new-animal-sighting-form")
+
+newAnimalForm.addEventListener('submit', function (event) {
+    event.preventDefault() 
+
+    console.log('submit!')
+
+    const newSpecies = event.target[0].value
+    const newVideo = event.target[1].value
+    const newPhoto = event.target[2].value
+    const newDescription = event.target[3].value
+
+    const newAnimalSighting = {
+
+        ///ran out of time.. :(
+    }
+
+}
