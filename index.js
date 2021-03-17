@@ -4,7 +4,7 @@ console.log("Here's your header:", header)
 
 
 /***** Deliverable 2 *****/
-header.style.color = "green"
+header.style.color = "red"
 
 
 /***** Deliverable 3 *****/
@@ -60,13 +60,54 @@ animalToRemove.remove()
 
 /***** Deliverable 1 *****/
 function toggleColor(element) {
-    if (element.style.color === "green") {
+    if (element.style.color === "red") {
         element.style.color = "black"
     } else {
-        element.style.color = "green"
+        element.style.color = "red"
     }
-}
+console.log("BigRich")}
+
+header.addEventListener('click', function(){
+
+    toggleColor(header)
+
+})
+
 
 /***** Deliverable 2 *****/
 
+const likeButton = document.body.querySelector('button.like-button')
+
+
+likeButton.addEventListener('click', function(){
+
+    likes.textContent = `${traveler.likes++} BEEF`
+    console.dir(likes)
+
+})
 /***** Deliverable 3 *****/
+
+const form = document.querySelector('form#new-animal-sighting-form')
+
+form.addEventListener('submit', function(event){
+    event.preventDefault()
+    console.log('Submitted')
+
+    console.dir(event.target)
+
+    const animalSpecies = event.target[0].value
+    const animalLink = event.target[1].value
+    const animalPhoto = event.target[2].value
+    const animalDesc = event.target[3].value
+
+    const newArticleObj = {
+        species: animalSpecies,
+        video: animalLink,
+        photo: animalPhoto,
+        description: animalDesc
+    }
+
+    renderAnimalSightingPost(newArticleObj)
+    form.reset()
+
+})
