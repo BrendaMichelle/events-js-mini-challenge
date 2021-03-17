@@ -2,7 +2,6 @@
 const header = document.querySelector("#header")
 console.log("Here's your header:", header)
 
-
 /***** Deliverable 2 *****/
 header.style.color = "green"
 
@@ -59,14 +58,46 @@ animalToRemove.remove()
 /************************** EVENTS JS MINI CHALLENGE ******************************/
 
 /***** Deliverable 1 *****/
-function toggleColor(element) {
-    if (element.style.color === "green") {
-        element.style.color = "black"
+
+header.addEventListener("click", function () {
+    if (header.style.color !== 'red') {
+        header.style.color = 'red'
     } else {
-        element.style.color = "green"
+        header.style.color = 'black'
     }
-}
+})
 
 /***** Deliverable 2 *****/
+const like_button = document.querySelector('button.like-button')
+
+like_button.addEventListener('click', function (e) {
+    console.log('likedddd')
+    traveler.likes += 1
+    likes.textContent = `${traveler.likes} Likes`
+
+})
 
 /***** Deliverable 3 *****/
+
+const form = document.querySelector('form#new-animal-sighting-form')
+form.addEventListener("submit", function (e) {
+    e.preventDefault()
+
+    const input1 = e.target[0].value
+    const input2 = e.target[1].value
+    const input3 = e.target[2].value
+    const input4 = e.target[3].value
+
+    const newAnimalObject = {
+        Species: input1,
+        VideoLink: input2,
+        PhotoLink: input3,
+        Description: input4,
+        likes: 0,
+        id: traveler.animalSightings[traveler.animalSightings.length - 1].id + 1
+
+    }
+    traveler.animalSightings.push(newAnimalObject)
+    renderAnimalSightingPost(newAnimalObject)
+    form.reset()
+})
