@@ -46,6 +46,8 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
+defined h1 as a variable using querySelector and created an event listener to change the header color when it is clicked.
+built my method by going off what we did in lecture today. not sure if that's what i was supposed to do or use the function already written but i wasn't 100% certain on how to go about that. 
 
 ```
 
@@ -55,6 +57,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
+i googled around to find a solution because i was able to make a function that was clickable but it wasn't registering the clicks as new likes. i created a button variable and set it to the like-button class, then created an event listener function for click. in there i set a variable for the travelers likes by pulling the likes class and turned it into an integer that could be added to the innerText of our likes class. then did +=1 so it would increase the likes with each click.
 
 ```
 
@@ -81,6 +84,7 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
+used the form we worked on in lecture today as the base for creating a form event listener 
 
 ```
 

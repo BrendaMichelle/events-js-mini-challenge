@@ -1,6 +1,6 @@
 /***** Deliverable 1 *****/
 const header = document.querySelector("#header")
-console.log("Here's your header:", header)
+// console.log("Here's your header:", header)
 
 
 /***** Deliverable 2 *****/
@@ -8,7 +8,7 @@ header.style.color = "green"
 
 
 /***** Deliverable 3 *****/
-console.log('This is what the traveler object looks like: ', traveler)
+// console.log('This is what the traveler object looks like: ', traveler)
 
 const profileImg = document.querySelector("#profile img")
 profileImg.src = traveler.photo
@@ -59,14 +59,60 @@ animalToRemove.remove()
 /************************** EVENTS JS MINI CHALLENGE ******************************/
 
 /***** Deliverable 1 *****/
+const h1 = document.querySelector('h1')
 function toggleColor(element) {
-    if (element.style.color === "green") {
+    if (element.style.color === "red") {
         element.style.color = "black"
     } else {
-        element.style.color = "green"
+        element.style.color = "red"
     }
 }
 
+h1.addEventListener('click', function(){
+    if(h1.style.color === 'red'){
+        h1.style.color = 'black'
+    }
+    else {
+        h1.style.color = 'red'
+    }
+})
+
 /***** Deliverable 2 *****/
 
+const button = document.querySelector('.like-button')
+console.log(button)
+button.addEventListener('click', function(){
+    let likes = document.querySelector('.likes')
+    num = parseInt(likes.innerText)
+    num += 1 
+    likes.innerText = num
+})
+
+
 /***** Deliverable 3 *****/
+const form = document.querySelector('form#new-animal-sighting-form')
+// console.log(form)
+form.addEventListener('submit', function (event) {
+    event.preventDefault() 
+    // console.log('Form submitted!!!')
+
+    console.dir(event.target)
+
+    const inputFieldOne = event.target[0].value
+    const inputFieldTwo = event.target[1].value
+    const inputFieldThree = event.target[2].value
+    const inputFieldFour = event.target[3].value
+    
+
+    const newAnimalSightingObject = {
+        species: inputFieldOne,
+        video: inputFieldTwo,
+        photo: inputFieldThree,
+        description: inputFieldFour,
+    }
+
+    // animalSightings.push(newAnimalSightingObject)
+
+    renderAnimalSightingPost(newAnimalSightingObject)
+    form.reset()
+})
