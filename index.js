@@ -3,6 +3,9 @@ const header = document.querySelector("#header")
 console.log("Here's your header:", header)
 
 
+
+
+
 /***** Deliverable 2 *****/
 header.style.color = "green"
 
@@ -63,10 +66,13 @@ function toggleColor(element) {
     if (element.style.color === "green") {
         element.style.color = "black"
     } else {
-        element.style.color = "green"
+        element.style.color = "red"
     }
 }
 
+header.addEventListener('click', function() {
+    toggleColor(header)
+})
 /***** Deliverable 2 *****/
 
 /***** Deliverable 3 *****/
