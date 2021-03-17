@@ -46,7 +46,11 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
+The header was already found and saved to a variable from the mini challenge yesterday so I took that variable and added the event listener to it. I told it to listen for a click on the header and then I added the toggle helper function inside of the function expression with the header as the argument. I then tested it in the browser. I was unsure if it made more sense to skip the expression and just call toggleColor(header) in the parameters like so...
 
+header.addEventListener('click', toggleColor(header))
+
+...Becuase all I am asking this function to do is toggle. I would love to hear your thoughts on it. 
 ```
 
 ## Deliverable 2: Like Button
@@ -55,7 +59,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+I first opened up my dev tools and searched for the like button and then I saved it to a variable. I knew I was going to want to change the content where is says "# likes" so next I found that element which was a paragraph tag with the class "likes". I saved that to a variable too. I then called the eventListener on the button, told it to listen for a click and then change the traveler likes to increment up 1. Then I manually changes the display of likes(since it is not actually saving the incremented likes in the data). 
 ```
 
 ## Deliverable 3: Add a New Animal Sighting Post
