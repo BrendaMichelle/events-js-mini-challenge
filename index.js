@@ -106,7 +106,7 @@ form.addEventListener('submit', function (event) {
 
     const newAnimalSightingObject = {
         species: inputFieldOne,
-        video: inputFieldTwo,
+        link: inputFieldTwo,
         photo: inputFieldThree,
         description: inputFieldFour,
     }
