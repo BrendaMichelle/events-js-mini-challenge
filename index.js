@@ -4,7 +4,7 @@ console.log("Here's your header:", header)
 
 
 /***** Deliverable 2 *****/
-header.style.color = "green"
+header.style.color = "red"
 
 
 /***** Deliverable 3 *****/
@@ -60,13 +60,69 @@ animalToRemove.remove()
 
 /***** Deliverable 1 *****/
 function toggleColor(element) {
-    if (element.style.color === "green") {
+    if (element.style.color === "red") {
         element.style.color = "black"
     } else {
-        element.style.color = "green"
+        element.style.color = "red"
     }
+    console.log(element)
 }
+
+
+// header.addEventListener('click', function(event){
+//     toggleColor(event.target)
+// })
+// IF header has children, use header > event.target
+
+header.addEventListener('click', function(){
+    toggleColor(header)
+})
+// console.log('click')
+
+
 
 /***** Deliverable 2 *****/
 
+const likeButton = document.querySelector('button.like-button')
+
+likeButton.addEventListener('click', function(){
+
+    likes.textContent = `${traveler.likes++} Likes`
+
+    // const likesPtag = document.querySelector('p.likes')
+    // const likesPtag = button.previousElementSibling
+
+})
+
+// console.log(likes)
+
 /***** Deliverable 3 *****/
+
+const newSightingForm = document.querySelector('form#new-animal-sighting-form')
+
+newSightingForm.addEventListener('submit', function(event){
+
+    event.preventDefault()
+    
+    // console.log('Submitted')
+    console.dir(event.target)
+
+    const speciesInput = event.target[0].value
+    const videoLink = event.target[1].value
+    const photoInput = event.target[2].value
+    const descriptionInput = event.target[3].value
+
+    const newSightingObject = {
+
+        species: speciesInput,
+        link: videoLink,
+        photo: photoInput,
+        description: descriptionInput,
+        id: traveler.animalSightings[traveler.animalSightings.length - 1].id + 1
+    }
+
+    // articlesArray.push(newArticleObject)
+    renderAnimalSightingPost(newSightingObject)
+    newSightingForm.reset()
+
+})

@@ -45,7 +45,15 @@ Try calling it a few times to see the color switch back and forth.
 Once you have it working in the console, write an event listener that will use this helper function to change the color of the header when a user clicks on it.
 
 **YOUR NOTES**
-```
+1) Which element am I interested in listening for an event on?
+- <h1>
+2) What type of event do I want to listen for?
+- click
+3)  What should happen?
+-Toggle b/n colors
+4)addEventListener to header with click and callback function
+5) add function toggleColor(header) inside callback function
+
 
 ```
 
@@ -54,7 +62,14 @@ Once you have it working in the console, write an event listener that will use t
 **When a user clicks the like button for Raffy's profile picture**, Raffy's likes should increase by 1. The likes won't persist (if you refresh the page, they'll reset to their original value) - we'll add persistence in a future challenge.
 
 **YOUR NOTES**
-```
+1) Which element am I interested in listening for an event on?
+- button
+2) What type of event do I want to listen for?
+- click
+3)  What should happen?
+-likes should increase on page
+4)create const variable for button using query selector class
+5)addEventListener on like button variable 
 
 ```
 
@@ -80,7 +95,17 @@ Some things to keep in mind:
 - Once you have access to an input field, you still need to retrieve its *value* to see what the user entered in the form!
 
 **YOUR NOTES**
-```
+1) Which element am I interested in listening for an event on?
+- form
+2) What type of event do I want to listen for?
+- submit
+3)  What should happen?
+-create new sighting, w/o a page reload -- display new sighting on same page
+4) create constant variable to find form animal-sighting-form
+5) use cariable and add event listener
+6) add submit as first arg and callback function as second arg
+7) add event.preventDefault into callback arg
+8) add 
 
 ```
 
