@@ -1,10 +1,10 @@
 /***** Deliverable 1 *****/
-const header = document.querySelector("#header")
+const header = document.querySelector("h1#header")
 console.log("Here's your header:", header)
 
 
 /***** Deliverable 2 *****/
-header.style.color = "green"
+header.style.color = "black"
 
 
 /***** Deliverable 3 *****/
@@ -67,6 +67,84 @@ function toggleColor(element) {
     }
 }
 
+header.addEventListener('click', function(){
+ if(header.style.color === 'blue'){
+    header.style.color = 'black'
+    }  
+ else {
+     header.style.color = 'blue'
+    }  
+})
+
 /***** Deliverable 2 *****/
 
+const buttons = document.querySelector('button.like-button')
+buttons.addEventListener('click', function(){
+    //console.log('clicked!!!')
+    //const likes = document.querySelector('p.likes')
+    //const likes = button.previousElementSibling
+    // const currLikes = parseInt(likes.textContent)
+    // likes.textContent = `${currLikes + 1} Likes`
+    likes.textContent = `${traveler.likes++} Likes`
+})
+
+//header.addEventListener('click', function(event){
+//toggleColor(event.target)
+//})
 /***** Deliverable 3 *****/
+
+//const form = document.querySelector('new-animal-sighting-form')
+
+// form.addEventListener('submit', function (event) {
+
+// event.preventDefault()
+// console.log('Form submitted!')
+
+// console.dir(event.target)
+
+// const inputFieldOne = event.target[0]
+// const inputFieldTwo = event.target[1]
+// const inputFieldThree = event.target[2]
+// const inputFieldFour = event.target[3]
+
+// const newAnimalSighting = {
+//     Species: inputFieldOne,
+//     Photo: inputFieldTwo,
+//     link: inputFieldThree,
+//     Description: inputFieldFour,
+//     id: animalsArray[animalsArray.length - 1].id + 1
+//     }
+
+//     animalsSighting.push(newAnimalsObject)
+
+//     renderOnePost(newAnimalsObject)
+//     form.reset()
+// })
+
+const newSightingForm = document.querySelector('form#new-animal-sighting-form')
+
+newSightingForm.addEventListener('submit', function(event){
+    event.preventDefault()
+    // console.dir(event.target)
+
+    // console.log(event.target)
+
+    const species = event.target[0].value
+    const video = event.target[1].value
+    const photo = event.target[2].value
+    const description = event.target[3].value
+
+    const lastIndex = traveler.animalSightings.length - 1
+    const newSightingObject = { 
+        id: traveler.animalSightings[lastIndex].id + 1,
+        travelerId: 1, // hard coding in travelerId
+        species: species,
+        photo: photo,
+        link: video,
+        description: description
+    }
+
+    renderAnimalSightingPost(newSightingObject)
+    
+    newSightingForm.reset()
+})
