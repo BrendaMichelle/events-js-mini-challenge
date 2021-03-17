@@ -61,10 +61,10 @@ animalToRemove.remove()
 /***** Deliverable 1 *****/
 
 function toggleColor(element) {
-    if (element.style.color === "green") {
+    if (element.style.color === "red") {
         element.style.color = "black"
     } else {
-        element.style.color = "green"
+        element.style.color = "red"
     }
 }
 
