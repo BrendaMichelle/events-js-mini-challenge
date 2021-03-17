@@ -73,12 +73,10 @@ toggleHeaderColor.addEventListener('click', function (event) {
 
 /***** Deliverable 2 *****/
 
-const addLike = document.querySelector("button.like-button")
-let count = document.querySelector("p.likes")
-addLike.addEventListener('click', function (event) {
-    count++
-//Not sure if the above is corret in how you would add a 'like'.
-
+const addLikes= document.querySelector('button.like-button')
+addLikes.addEventListener('click', function (event) {
+    traveler.likes += 1
+    likes.textContent = `${traveler.likes} Likes`
 })
 
 /***** Deliverable 3 *****/
@@ -103,7 +101,7 @@ form.addEventListener('submit', function (event){
     }
     traveler.animalSightings.push(newAnimalSighting)
     renderAnimalSightingPost(newAnimalSighting)
-
+    form.reset()
 })
 
 // used the following info to test the new animal sighting;
