@@ -4,7 +4,7 @@ console.log("Here's your header:", header)
 
 
 /***** Deliverable 2 *****/
-header.style.color = "green"
+header.style.color = "red"
 
 
 /***** Deliverable 3 *****/
@@ -60,13 +60,35 @@ animalToRemove.remove()
 
 /***** Deliverable 1 *****/
 function toggleColor(element) {
-    if (element.style.color === "green") {
+    if (element.style.color === "red") {
         element.style.color = "black"
     } else {
-        element.style.color = "green"
+        element.style.color = "red"
     }
 }
 
+header.addEventListener('click', function(event){
+    toggleColor(event.target)
+
+})
+
 /***** Deliverable 2 *****/
+const button = document.querySelector('button.like-button')
+button.addEventListener('click', function() {
+    const nowlikes = parseInt(likes.textContent)
+    likes.textContent = `${nowlikes + 1} Likes`
+})
+
+
 
 /***** Deliverable 3 *****/
+
+const newSightingfrom = document.querySelector('form#new-animal-sighting-form')
+newSightingfrom.addEventListener('submit', function (event) {
+    event.preventDefault()
+
+    const species = event.target[0].value
+    const video = event.target[1].value
+    const photo = event.target[2].value
+    const description = event.target[4].value
+})
