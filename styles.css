@@ -1,6 +1,7 @@
 * {
     font-family: monospace;
     margin: 1rem;
+    
 }
 
 img {
@@ -9,6 +10,7 @@ img {
 
 h4, ul {
     margin-left: 5em;
+
 }
 
 li img {

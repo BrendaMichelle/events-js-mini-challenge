@@ -1,6 +1,6 @@
 /***** Deliverable 1 *****/
 const header = document.querySelector("#header")
-console.log("Here's your header:", header)
+// console.log("Here's your header:", header)
 
 
 /***** Deliverable 2 *****/
@@ -8,7 +8,7 @@ header.style.color = "green"
 
 
 /***** Deliverable 3 *****/
-console.log('This is what the traveler object looks like: ', traveler)
+// console.log('This is what the traveler object looks like: ', traveler)
 
 const profileImg = document.querySelector("#profile img")
 profileImg.src = traveler.photo
@@ -59,6 +59,11 @@ animalToRemove.remove()
 /************************** EVENTS JS MINI CHALLENGE ******************************/
 
 /***** Deliverable 1 *****/
+
+header.addEventListener('click', function(){
+     toggleColor(header) 
+    })
+
 function toggleColor(element) {
     if (element.style.color === "green") {
         element.style.color = "black"
@@ -69,4 +74,61 @@ function toggleColor(element) {
 
 /***** Deliverable 2 *****/
 
+const button = document.querySelector('button.like-button')
+// console.log(button)
+
+button.addEventListener('click', function(){
+const likesPtag = document.querySelector('p.likes')
+const currLikes = parseInt(likes.textContent)
+
+
+likes.textContent = `${currLikes + 1} Likes`
+
+// likes.textContent = `${traveler.likes++} Likes`
+
+})
+
 /***** Deliverable 3 *****/
+
+const newSightingForm = document.querySelector('form#new-animal-sighting-form')
+
+newSightingForm.addEventListener('submit', function(event){
+    event.preventDefault()
+    //console.log(event.target)
+
+
+    const species = event.target[0].value 
+    const video= event.target[1].value
+    const photo = event.target[2].value
+    const description = event.target[3].value
+
+    //another way - using the id or name attribute on the element
+    // you can use dot notation if the value doesn't have any special characters 
+    // const species = event.target.species.value 
+    // const video= event.target["animal-link"].value
+    // const photo = event.target["animal-photo"].value
+    // const description = event.target["sighting-description"].value
+ 
+    // get the user input 
+
+
+const lastIndex = traveler.animalSightings.length - 1
+const newSightingObject = {
+    id: traveler.animalSightings[lastIndex].id + 1 ,
+    travelerId: 1,   //hard coded 
+    species: species,
+    photo: photo,
+    link:  video,
+    description: description
+}
+
+renderAnimalSightingPost(newSightingObject)
+
+newSightingForm.reset 
+})
+//what element am I interested in listening for an event on?
+// <form>
+//what type of event do I want to listen for?
+// submit 
+//what should happen?
+// no page reload! create a new sighting and display it on the page ie. slap in on the DOM
