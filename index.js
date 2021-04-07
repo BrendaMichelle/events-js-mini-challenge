@@ -3,6 +3,10 @@ const header = document.querySelector("#header")
 console.log("Here's your header:", header)
 
 
+// COULD HAVE RAN THE HELPER METHOD AT THE BOTTOM OF THE DOCUMENT
+// STEP 1 - FIND/STORE THE ELEMENT
+// STEP 2 - addEventListner with click as the event and anonymous function defined with the conditional
+
 /***** Deliverable 2 *****/
 header.style.color = "green"
 
@@ -67,6 +71,54 @@ function toggleColor(element) {
     }
 }
 
+header.addEventListener('click', function(){
+    if (header.style.color === 'black'){
+        header.style.color = 'red'
+    } else {
+        header.style.color = 'black'
+    }
+    
+})
+// didnt see toggleColor() when I originally wrote the function uptop. I'd basically take
+// that and send it into the listener method...please verify if the following would be correct.
+// addEventListner ('click',toggleColor)
 /***** Deliverable 2 *****/
 
+let likesElement = document.querySelector("#profile > p")
+let buttonElement = document.querySelector("#profile > button")
+buttonElement.addEventListener('click', function() {
+    likesInt = parseInt(likesElement.innerText.split(" ")[0],10)
+    likesInt += 1
+    likesElement.innerText = `${likesInt} Likes`
+})
+
 /***** Deliverable 3 *****/
+
+let formElement = document.querySelector("#new-animal-sighting-form")
+let sightingsList = document.querySelector("#animals")
+
+formElement.addEventListener("submit", function(event) {
+     event.preventDefault()
+
+     let speciesInput = event.target.species.value
+     let linkInput = event.target.link.value
+     let photoInput = event.target.photo.value
+     let descriptionInput = event.target.description.value
+     let animalId = sightingsList.children.length + 1
+
+     infoArray = [speciesInput, linkInput, photoInput, descriptionInput, animalId]
+     singleSighting(infoArray)
+})
+
+function singleSighting(object) {
+
+    let sightingInstance =  document.createElement('li')
+
+    sightingInstance.innerHTML = `<li data-id=${infoArray[4]}>
+    <p>${infoArray[3]}</p>
+    <img src="${infoArray[2]}" alt="animal sighting species"/>
+    <a href="${infoArray[1]}" target="_blank">Here's a video about the ${infoArray[0]} species!</a>
+  </li>`
+
+  sightingsList.append(sightingInstance)
+}
