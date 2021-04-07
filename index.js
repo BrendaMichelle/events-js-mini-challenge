@@ -71,7 +71,7 @@ function toggleColor(element) {
 // })
 const changeToggle = document.querySelector('h1#header')
 changeToggle.click(function() {
-    ${changeToggle}.toggleClass("black")}
+    ${changeToggle}.toggleClass("black")
 })
 
 
