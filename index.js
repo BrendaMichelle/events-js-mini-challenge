@@ -67,6 +67,35 @@ function toggleColor(element) {
     }
 }
 
+const headerText = document.querySelector('h1#header')
+
+headerText.addEventListener('click', () => {
+    toggleColor(headerText)
+})
+
+
+
+
 /***** Deliverable 2 *****/
+//1. find element
+const buttonClick = document.querySelector('button.like-button')
+
+
+//2.
+ buttonClick.addEventListener('click', () => {
+     console.log('worked')
+ })
+
+
+ const likeButton = document.querySelector('p.likes')
+ const likeCount = document.querySelector('p.likes')
+
+ count = 1000
+ likeButton.addEventListener('click', function(element){
+     count += 1;
+     likeCount.innerHTML = count + " Likes" ;
+ })
+ //.split & parseInt
+
 
 /***** Deliverable 3 *****/
