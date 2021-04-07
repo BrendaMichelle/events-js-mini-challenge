@@ -1,6 +1,6 @@
 /***** Deliverable 1 *****/
 const header = document.querySelector("#header")
-console.log("Here's your header:", header)
+// console.log("Here's your header:", header)
 
 
 /***** Deliverable 2 *****/
@@ -8,7 +8,7 @@ header.style.color = "green"
 
 
 /***** Deliverable 3 *****/
-console.log('This is what the traveler object looks like: ', traveler)
+// console.log('This is what the traveler object looks like: ', traveler)
 
 const profileImg = document.querySelector("#profile img")
 profileImg.src = traveler.photo
@@ -59,14 +59,58 @@ animalToRemove.remove()
 /************************** EVENTS JS MINI CHALLENGE ******************************/
 
 /***** Deliverable 1 *****/
+
 function toggleColor(element) {
     if (element.style.color === "green") {
-        element.style.color = "black"
+        element.style.color = "red"
     } else {
         element.style.color = "green"
     }
 }
 
+header.addEventListener('click', function(){
+    if (header.style.color === 'green'){
+        header.style.color = "red"
+    } else {
+        header.style.color = "green"
+    }  
+})
+
 /***** Deliverable 2 *****/
 
+const button = document.querySelector('.like-button')
+button.addEventListener('click', function(){
+
+   const likes = document.querySelector('.likes')
+   likes.textContent = `${traveler.likes + 1} Likes `
+
+})
+
 /***** Deliverable 3 *****/
+
+const form = document.querySelector('#new-animal-sighting-form')
+form.addEventListener('submit', function(event){
+    event.preventDefault()
+
+    const speciesInput = event.target.species.value
+    const linkInput = event.target.link.value
+    const photoInput = event.target.photo.value
+    const descriptionInput = event.target.description.value
+
+    
+    const lastIndex = traveler.animalSightings.length -1
+    const lastId = traveler.animalSightings[lastIndex].id
+
+    newAnimalSighObj = {
+        travelerId: traveler.id,
+        species: speciesInput,
+        photo: photoInput,
+        link: linkInput,
+        description: descriptionInput,
+        id: lastId + 1
+    }
+    renderAnimalSightingPost(newAnimalSighObj)
+})
+
+
+        
