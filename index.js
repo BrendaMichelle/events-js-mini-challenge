@@ -2,7 +2,6 @@
 const header = document.querySelector("#header")
 console.log("Here's your header:", header)
 
-
 /***** Deliverable 2 *****/
 header.style.color = "green"
 
@@ -66,7 +65,26 @@ function toggleColor(element) {
         element.style.color = "green"
     }
 }
+// const changeToggle = document.querySelector('h1#header')
+// changeToggle.addEventListener('click', function () {
+//     document.body.classList.toggle('dark-mode')
+// })
+const changeToggle = document.querySelector('h1#header')
+changeToggle.click(function() {
+    ${changeToggle}.toggleClass("black")}
+})
+
 
 /***** Deliverable 2 *****/
+const likeButton = document.querySelector('button.like-button')
+const likeCount = document.querySelector('p.likes')
+
+count = 1000
+likeButton.addEventListener('click', function(element){
+    count += 1;
+    likeCount.innerHTML = count + " Likes" ;
+})
+
+
 
 /***** Deliverable 3 *****/
