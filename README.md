@@ -46,7 +46,8 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+1. add a click event to header element (already set to a variable from before)
+2. in the body of event handler, pass event target into the toggle color funtion
 ```
 
 ## Deliverable 2: Like Button
@@ -55,7 +56,9 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+1. Grab the like button from the DOM, set to a variable
+2. Add event listener to likeButton, within body of handler, access the 'likes' property of traveler object and reassign to current amount + 1
+3. Re-render the likes element on the page to reflect change
 ```
 
 ## Deliverable 3: Add a New Animal Sighting Post
@@ -81,6 +84,13 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
-
+1. Grab form element from the DOM, set to a variable
+2. Add event listener to form for the submit event
+3. in the body of the event handler, prevent the default page reload
+4. use the already existing form varibale to easily access each input field using the "name" property with the value property, set each value to it's own variable
+5. create a newSighting object, setting the appropriate keys to the matching values grabbed in step 4
+6. render a new sighting using the renderAnimalSightingPost function defined above, and passing in the newSighting object as an argument
+7. reset the form so it is easy to enter another new sighting
+8. push the newSighting object into the traveler.animalSightings array because... why not?
 ```
 
