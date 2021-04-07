@@ -4,7 +4,7 @@ console.log("Here's your header:", header)
 
 
 /***** Deliverable 2 *****/
-header.style.color = "green"
+header.style.color = "blue"
 
 
 /***** Deliverable 3 *****/
@@ -59,14 +59,48 @@ animalToRemove.remove()
 /************************** EVENTS JS MINI CHALLENGE ******************************/
 
 /***** Deliverable 1 *****/
-function toggleColor(element) {
-    if (element.style.color === "green") {
-        element.style.color = "black"
+header.addEventListener('click', function(title){
+    // console.log(title)
+    if (title.target.style.color === "purple") {
+        title.target.style.color = "pink"
     } else {
-        element.style.color = "green"
+        title.target.style.color = "purple"
     }
-}
+})
+
 
 /***** Deliverable 2 *****/
 
+const likeButton = document.querySelector('#profile button.like-button')
+// const likes = document.querySelector("#profile > p")
+
+likeButton.addEventListener('click', function(likes){
+    const likeCounter = document.querySelector("#profile > p")
+    console.log(likes)
+    traveler.likes+=1
+        // likes.path[1].childNodes[7].textContent + 1
+    likeCounter.innerHTML = `${traveler.likes} Likes`
+})
+
+
 /***** Deliverable 3 *****/
+
+const newForm = document.querySelector('form#new-animal-sighting-form')
+newForm.addEventListener('submit', function(event){
+    console.log('form submitted', event.target)
+    event.preventDefault()
+    
+    const speciesInput = event.target.species.value
+    const videoInput = event.target.link.value
+    const photoInput = event.target.photo.value
+    const decsInput = event.target.description.value
+
+    const newObject = {
+        species: speciesInput,
+        video: videoInput,
+        photo: photoInput,
+        description: decsInput
+    }
+    renderAnimalSightingPost(newObject)
+})
+
