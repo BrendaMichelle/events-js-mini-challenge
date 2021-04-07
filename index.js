@@ -2,6 +2,8 @@
 const header = document.querySelector("#header")
 console.log("Here's your header:", header)
 
+toggleColor(document.querySelector("h1#header"))
+
 
 /***** Deliverable 2 *****/
 header.style.color = "green"
