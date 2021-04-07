@@ -102,3 +102,31 @@ form.addEventListener("submit", function(e){
     }
     renderAnimalSightingPost(newObject)
 })
+ 
+
+// Hi Michelle I have a question and
+//  this was the question I meant to ask this morning. 
+//  On Deliverable 4, if I used an anonymous callback like below,
+// how  am I able to manipulate DOM like I did on line 103 ? Thank you. 
+
+// traveler.animalSightings.forEach((animalSightingObj) => {
+//          const li = document.createElement("li")
+//          li.dataset.id = animalObject.id
+            
+//          const p = document.createElement("p")
+//          p.textContent = animalObject.description
+            
+//          const img = document.createElement("img")
+//          img.src = animalObject.photo
+//          img.alt = animalObject.species
+            
+//          const a = document.createElement("a")
+//          a.href = animalObject.link
+//          a.target = "_blank"
+//          a.textContent = `Here's a video about the ${animalObject.species} species!`
+            
+//          li.append(p, img, a)
+            
+//          const animalsUl = document.querySelector("#animals")
+//          animalsUl.append(li)
+// }
