@@ -25,6 +25,7 @@ likes.textContent = `${traveler.likes} Likes`
 
 
 /***** Deliverable 4 *****/
+
 function renderAnimalSightingPost (animalObject) {
     const li = document.createElement("li")
     li.dataset.id = animalObject.id
@@ -67,6 +68,37 @@ function toggleColor(element) {
     }
 }
 
+header.addEventListener("click", function(e){
+    // console.log(e.target)
+    toggleColor(header)
+})
+
 /***** Deliverable 2 *****/
 
-/***** Deliverable 3 *****/
+const buttonLikes = document.querySelector("#profile button.like-button")
+let increaseLike = traveler.likes
+buttonLikes.addEventListener("click", function(e) {
+    console.log(increaseLike)
+    increaseLike++
+    likes.textContent = increaseLike
+})
+
+/***** Deliverable 3 *****/ 
+const form = document.querySelector("form#new-animal-sighting-form")
+
+form.addEventListener("submit", function(e){
+    event.preventDefault()
+    const speciesInput = event.target.species.value
+    const videoLinkInput = event.target.link.value
+    const photoInput = event.target.photo.value
+    const descriptionInput = event.target.description.value
+    
+    const newObject = {
+        species: speciesInput,
+        link: videoLinkInput,
+        photo: photoInput,
+        description: descriptionInput
+
+    }
+    renderAnimalSightingPost(newObject)
+})
