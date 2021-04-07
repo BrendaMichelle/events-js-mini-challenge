@@ -46,7 +46,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+Gotta identify and assign the element, determine the event we're listening for, and then use the helper function. Not sure yet why I couldn't get calling toggleColor to work directly without calling the anonymous one first...
 ```
 
 ## Deliverable 2: Like Button
@@ -55,7 +55,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+Find good selectors for the button and number of likes to be able to assign to variables. Add eventListener to the button for clicks. Figure out how to manipulate text on screen. 
 ```
 
 ## Deliverable 3: Add a New Animal Sighting Post
@@ -81,6 +81,10 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
+Stare down the form part of the DOM. Find selector for button, and remove default behavior.
+
+Figure out how to grab information from the form in a structure that fits an animalObject with the right information. Use helper method to render and append. Add new event listener for click that leads to new addAnimalSighting function.
+
 
 ```
 
