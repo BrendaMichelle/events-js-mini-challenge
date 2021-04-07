@@ -46,7 +46,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+dont forget triple equals for first condition
 ```
 
 ## Deliverable 2: Like Button
@@ -55,7 +55,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+interpolate the updated likes value into that p tag!
 ```
 
 ## Deliverable 3: Add a New Animal Sighting Post
@@ -81,6 +81,6 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
-
+assign the variables to the new object!
 ```
 

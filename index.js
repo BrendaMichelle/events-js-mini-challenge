@@ -1,14 +1,39 @@
 /***** Deliverable 1 *****/
+// console.log("Here's your header:", header)
+
 const header = document.querySelector("#header")
-console.log("Here's your header:", header)
+
+function headerColorChange (){
+    if (header.style.color === "red"){
+        header.style.color = "black"
+    }
+    else {
+        header.style.color = "red"
+    }
+}
+
+header.addEventListener("click", headerColorChange);
+
+
+
 
 
 /***** Deliverable 2 *****/
 header.style.color = "green"
 
+const likesButton = document.querySelector("#profile > button")
+
+function addLike (){
+    likeCounter = document.querySelector("#profile > p")
+    traveler.likes+=1
+    likeCounter.innerText = `${traveler.likes} Likes`
+}
+
+likesButton.addEventListener("click", addLike);
+
 
 /***** Deliverable 3 *****/
-console.log('This is what the traveler object looks like: ', traveler)
+// console.log('This is what the traveler object looks like: ', traveler)
 
 const profileImg = document.querySelector("#profile img")
 profileImg.src = traveler.photo
@@ -22,6 +47,28 @@ profileEm.textContent = traveler.nickname
 
 const likes = document.querySelector("#profile .likes")
 likes.textContent = `${traveler.likes} Likes`
+
+
+const newForm = document.querySelector('form#new-animal-sighting-form')
+newForm.addEventListener('submit', function(event){
+    // console.log('form submitted', event.target)
+    event.preventDefault()
+    
+    const speciesInput = event.target.species.value
+    const videoInput = event.target.link.value
+    const photoInput = event.target.photo.value
+    const decsInput = event.target.description.value
+    const newObject = {
+        species: speciesInput,
+        video: videoInput,
+        photo: photoInput,
+        description: decsInput
+    }
+    renderAnimalSightingPost(newObject)
+})
+
+
+
 
 
 /***** Deliverable 4 *****/
