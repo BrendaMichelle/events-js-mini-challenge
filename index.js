@@ -66,7 +66,55 @@ function toggleColor(element) {
         element.style.color = "green"
     }
 }
+const changeColor = document.querySelector("#header")
+changeColor.addEventListener('click', function (event){
+    // console.log(toggleColor)
+    if (changeColor.style.color === "green"){
+        changeColor.style.color = "black"
+    } else {
+        changeColor.style.color = "green"
+    }
+})
+     
 
 /***** Deliverable 2 *****/
+// const likeButton = document.querySelector("#profile > button")
+
+// likeButton.addEventListener('click', function(likes){
+
+
+// traveler.likes += 1 
+
+// likeCounter.innerHTML = `${traveler.likes} Likes`
+// })
+
+const likesButton = document.querySelector("#profile > button")
+function addLike (){
+    likeCounter = document.querySelector("#profile > p")
+    traveler.likes+=1
+    likeCounter.innerText = `${traveler.likes} Likes`
+}
+likesButton.addEventListener("click", addLike);
+//find likes in data.js 
+//update the likes 
+
 
 /***** Deliverable 3 *****/
+// const form = document.querySelector()  //find the form, set const, render the sighting
+const newForm = document.querySelector('form#new-animal-sighting-form')
+newForm.addEventListener('submit', function(event){
+    console.log('form submitted', event.target)
+    event.preventDefault()
+    
+    const speciesInput = event.target.species.value
+    const videoInput = event.target.link.value
+    const photoInput = event.target.photo.value
+    const decsInput = event.target.description.value
+    const newObject = {
+        species: speciesInput,
+        video: videoInput,
+        photo: photoInput,
+        description: decsInput
+    }
+    renderAnimalSightingPost(newObject)
+})
