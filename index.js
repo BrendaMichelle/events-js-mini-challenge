@@ -59,25 +59,28 @@ animalToRemove.remove()
 /************************** EVENTS JS MINI CHALLENGE ******************************/
 
 /***** Deliverable 1 *****/
-const titleToggle = document.querySelector("h1#header")
+// const titleToggle = document.querySelector("h1#header")
 
-titleToggle.addEventListener('click', function(element){
-    if (element.style.color === "green") {
-        element.style.color = "black"
-    } else {
-        element.style.color = "green"
-    }
-})
-
-// function toggleColor(element) {
+// titleToggle.addEventListener('click', function(element){
 //     if (element.style.color === "green") {
 //         element.style.color = "black"
 //     } else {
 //         element.style.color = "green"
 //     }
-// }
+// })
 
+function toggleColor(element) {
+    if (element.style.color === "green") {
+        element.style.color = "black"
+    } else {
+        element.style.color = "green"
+    }
+}
 
+header.addEventListener('click', event => {
+    console.log(event.target)
+    toggleColor(event.target)
+})
 
 /***** Deliverable 2 *****/
 
@@ -85,23 +88,52 @@ likeButton = document.querySelector("button.like-button")
 likeCount = document.querySelector("p.likes")
 
 count = 1000
-likeButton.addEventListener('click', function(element){
+likeButton.addEventListener('click', event => {
+    // My appraoch
     // likeButton.classList.toggle('liked')
-    count += 1;
-    likeCount.innerHTML = "Likes: " + count
+    // count += 1;
+    // likeCount.innerHTML = "Likes: " + count
+    // APPROACH 1
+    const likesPDisplay = document.querySelector('p.likes')
+    traveler.likes += 1
+    likesPDisplay.textCOntent = `${traveler.likes} Likes`
+    console.log('clicked', event.target)
+
+    APPROACH 2
+    const likesPDisplay = document.querySelector('p.likes')
+    const currLikes = parseInt(likesPDisplay.textContent)
+    likesPDisplay.textContent = `${currLikes + 1} Likes`
 })
 
+// Approach 3
+console.log(event.target)
+const likesPDisplay = event.target.previousElementSibling
+console.log(likesPDisplay)
 /***** Deliverable 3 *****/
 
-// const speciesInput = event.target.species.value
-// const videoInput = event.target.url.value
-// const photoInput = event.target.url.value
-// const descriptionInput = event.target.description.value
+const createAnimalSightingForm = document.querySelector('#new-animal-sighting-form')
+createAnimalSightingForm.addEventListener('submit', event => {
+    event.preventDefault()
+    console.log('form submitted')
+})
 
-// const newAnimalObj = {
-//     species: speciesInput
-//     video: videoInput
-//     photo: photoInput
-//     description: descriptionInput
-// }
 
+const speciesInput = event.target.species.value
+const videoInput = event.target.link.value
+const photoInput = event.target.photo.value
+const descriptionInput = event.target.description.value
+
+const lastIndex = traveler.animalSightings.length - 1
+const lastId = traveler.animalSightings[lastIndex].id
+
+const newAnimalObj = {
+    travelerId: 1,
+    species: speciesInput,
+    video: videoInput,
+    photo: photoInput,
+    description: descriptionInput,
+    id: lastId + 1
+}
+
+renderAnimalSightingPost(newAnimalObj)
+event.target.reset()
