@@ -106,13 +106,7 @@ animalToRemove.remove()
 /************************** EVENTS JS MINI CHALLENGE ******************************/
 
 /***** Deliverable 1 *****/
-function toggleColor(element) {
-    if (element.style.color === "green") {
-        element.style.color = "black"
-    } else {
-        element.style.color = "green"
-    }
-}
+
 
 /***** Deliverable 2 *****/
 
