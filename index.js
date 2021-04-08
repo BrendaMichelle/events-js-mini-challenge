@@ -59,14 +59,49 @@ animalToRemove.remove()
 /************************** EVENTS JS MINI CHALLENGE ******************************/
 
 /***** Deliverable 1 *****/
-function toggleColor(element) {
+const titleToggle = document.querySelector("h1#header")
+
+titleToggle.addEventListener('click', function(element){
     if (element.style.color === "green") {
         element.style.color = "black"
     } else {
         element.style.color = "green"
     }
-}
+})
+
+// function toggleColor(element) {
+//     if (element.style.color === "green") {
+//         element.style.color = "black"
+//     } else {
+//         element.style.color = "green"
+//     }
+// }
+
+
 
 /***** Deliverable 2 *****/
 
+likeButton = document.querySelector("button.like-button")
+likeCount = document.querySelector("p.likes")
+
+count = 1000
+likeButton.addEventListener('click', function(element){
+    // likeButton.classList.toggle('liked')
+    count += 1;
+    likeCount.innerHTML = "Likes: " + count
+})
+
 /***** Deliverable 3 *****/
+
+// const speciesInput = event.target.species.value
+// const videoInput = event.target.url.value
+// const photoInput = event.target.url.value
+// const descriptionInput = event.target.description.value
+
+// const newAnimalObj = {
+//     species: speciesInput
+//     video: videoInput
+//     photo: photoInput
+//     description: descriptionInput
+// }
+
