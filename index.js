@@ -78,13 +78,15 @@ const profileLikeButton = document.querySelector("#profile > button.like-button"
 
 function addLike() {
     let likeTextLine = document.querySelector("#profile > p.likes")
-    let numberOfLikes = parseInt((likeTextLine.textContent).split(" ")[0])
-    let likeWord = (likeTextLine.textContent).split(" ")[1]
+    // let numberOfLikes = parseInt((likeTextLine.textContent).split(" ")[0])
+    // let likeWord = (likeTextLine.textContent).split(" ")[1]
 
-    numberOfLikes ++
-    newTextLine = `${numberOfLikes} ${likeWord}`
+    // numberOfLikes ++
+    // newTextLine = `${numberOfLikes} ${likeWord}`
 
-    likeTextLine.textContent = newTextLine
+    // likeTextLine.textContent = newTextLine
+    traveler.likes ++
+    likeTextLine.textContent = `${traveler.likes} Likes`
 }
 
 profileLikeButton.addEventListener("click", addLike)
@@ -115,4 +117,4 @@ function addAnimalSighting() {
     renderAnimalSightingPost(newAnimalObject)
 }
 
-sightingSubmitButton.addEventListener("click", (event) => addAnimalSighting(event))
+sightingSubmitButton.addEventListener("click", () => addAnimalSighting())
