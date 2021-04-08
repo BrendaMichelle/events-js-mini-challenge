@@ -78,11 +78,11 @@ headerText.addEventListener('click', () => {
 
 /***** Deliverable 2 *****/
 //1. find element
-const buttonClick = document.querySelector('button.like-button')
+const likeButton = document.querySelector('button.like-button')
 
 
 //2.
- buttonClick.addEventListener('click', () => {
+ likeButton.addEventListener('click', () => {
      console.log('worked')
  })
 
