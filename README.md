@@ -111,7 +111,8 @@ form.addEventListener('submit', function(event) {
         species: speciesInput,
         link: videoInput,
         photo: photoInput,
-        description: descriptionInput
+        description: descriptionInput,
+        travelerId: traveler.id
     }
 
     sightingsArray.push(sightingObj)
