@@ -2,9 +2,8 @@
 const header = document.querySelector("#header")
 console.log("Here's your header:", header)
 
-
 /***** Deliverable 2 *****/
-header.style.color = "green"
+header.style.color = "red"
 
 
 /***** Deliverable 3 *****/
@@ -60,13 +59,51 @@ animalToRemove.remove()
 
 /***** Deliverable 1 *****/
 function toggleColor(element) {
-    if (element.style.color === "green") {
+    if (element.style.color === "red") {
         element.style.color = "black"
     } else {
-        element.style.color = "green"
+        element.style.color = "red"
     }
 }
 
+header.addEventListener('click', function(event) {
+    toggleColor(event.target)
+})
+
 /***** Deliverable 2 *****/
+const likeButton = document.querySelector('button.like-button')
+
+likeButton.addEventListener('click', function() {
+    traveler.likes++
+    likes.textContent = `${traveler.likes} Likes`
+})
 
 /***** Deliverable 3 *****/
+const form = document.querySelector('form#new-animal-sighting-form')
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault()
+
+    // get user input
+    const speciesInput = event.target.species.value
+    const videoInput = event.target.link.value
+    const photoInput = event.target.photo.value
+    const descriptionInput = event.target.description.value
+
+    // generate new list element based on user input
+    const sightingsArray = traveler.animalSightings
+    const newId = sightingsArray[sightingsArray.length - 1].id + 1
+
+    const sightingObj = {
+        id: newId,
+        species: speciesInput,
+        link: videoInput,
+        photo: photoInput,
+        description: descriptionInput
+    }
+
+    sightingsArray.push(sightingObj)
+
+    renderAnimalSightingPost(sightingObj)
+    form.reset()
+})
