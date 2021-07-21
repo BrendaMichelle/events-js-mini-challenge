@@ -67,6 +67,39 @@ function toggleColor(element) {
     }
 }
 
+header.addEventListener('click', function(){
+    toggleColor(header)
+})
 /***** Deliverable 2 *****/
 
+const like = document.querySelector('.like-button')
+
+like.addEventListener('click', function(){
+    traveler.likes++
+    likes.textContent = `${traveler.likes} Likes`
+})
+
+
 /***** Deliverable 3 *****/
+
+const form = document.querySelector('form')
+
+form.addEventListener('submit', function(evnt) {
+    evnt.preventDefault()
+
+    const speciesIn = evnt.target[0].value
+    const vidIn = evnt.target[1].value
+    const picIn = evnt.target[2].value
+    const descIn = evnt.target[3].value
+
+    const formObj = {
+        species: speciesIn,
+        video: vidIn,
+        photo: picIn,
+        description: descIn
+    }
+
+    renderAnimalSightingPost(formObj)
+    form.reset()
+})
+
