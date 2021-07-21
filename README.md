@@ -44,18 +44,27 @@ Try calling it a few times to see the color switch back and forth.
 
 Once you have it working in the console, write an event listener that will use this helper function to change the color of the header when a user clicks on it.
 
-**YOUR NOTES**
-```
-
+**YOUR NOTES:**
+Target the header, which is the element we want to toggle the color of. Attach `addEventListener()` to the header element. We want to change the color when we **click** the header, so we include the click type to our `addEventListener()` method. Within this method, we create a function that toggles the header's color using the helper function provided.
+```js
+header.addEventListener('click', function(event) {
+    toggleColor(event.target)
+})
 ```
 
 ## Deliverable 2: Like Button
 
 **When a user clicks the like button for Raffy's profile picture**, Raffy's likes should increase by 1. The likes won't persist (if you refresh the page, they'll reset to their original value) - we'll add persistence in a future challenge.
 
-**YOUR NOTES**
-```
+**YOUR NOTE:**
+Target the like button and add an event listener to this element. We want the event type to be `click`. Within our event listener method, we want to increase the traveler's likes by 1 every time the button is clicked. We also want to update the number of likes display in the profile.
+```js
+const likeButton = document.querySelector('button.like-button')
 
+likeButton.addEventListener('click', function() {
+    traveler.likes++
+    likes.textContent = `${traveler.likes} Likes`
+})
 ```
 
 ## Deliverable 3: Add a New Animal Sighting Post
@@ -79,8 +88,37 @@ Some things to keep in mind:
 - You can use the `name` attribute of the input elements as an easy way to reference the input fields within the form. For example: `document.querySelector("#new-animal-sighting-form").link` will look inside the `form#new-animal-sighting-form` and return the `input` element with the `name='link'` attribute
 - Once you have access to an input field, you still need to retrieve its *value* to see what the user entered in the form!
 
-**YOUR NOTES**
-```
+**YOUR NOTES:**
+Target the form and attach an event listener with event type `submit`. In your event listener method, first make sure to add `event.preventDefault()` (ensure our function takes in `event`), which prevents the page from refreshing after a form is submitted. Then, retrieve each input field's value by accessing the name of each input field (this can be found in the input HTML) and its value on `event.target`. Afterward, use the `renderAnimalSightingPost()` helper function to create a new post. A new object needs to be created to use this helper function. To create a new object, use the input field values you retrieved and assign them to the correct keys (your key names should match the keys found in `traveler.animalSightings`). Make sure you push your new object into the traveler's animal sightings array, call the helper function to render a new post, and then reset your form.
+```js
+const form = document.querySelector('form#new-animal-sighting-form')
 
+form.addEventListener('submit', function(event) {
+    event.preventDefault()
+
+    // get user input
+    const speciesInput = event.target.species.value
+    const videoInput = event.target.link.value
+    const photoInput = event.target.photo.value
+    const descriptionInput = event.target.description.value
+
+    // generate new list element based on user input
+    const sightingsArray = traveler.animalSightings
+    const newId = sightingsArray[sightingsArray.length - 1].id + 1
+
+    const sightingObj = {
+        id: newId,
+        species: speciesInput,
+        link: videoInput,
+        photo: photoInput,
+        description: descriptionInput,
+        travelerId: traveler.id
+    }
+
+    sightingsArray.push(sightingObj)
+
+    renderAnimalSightingPost(sightingObj)
+    form.reset()
+})
 ```
 
