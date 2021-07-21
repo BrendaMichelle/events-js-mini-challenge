@@ -46,7 +46,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+Added an event listener to the header component. Then called the pre-defined toggle function with the header as an argument inside the event listener.
 ```
 
 ## Deliverable 2: Like Button
@@ -55,7 +55,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+Created an event listener for the like button and added a function to increase the number of likes by one when clicked. Also added a statement that shows the text for the number of likes in order to smoothly show the increased number of likes for every click of the like button.
 ```
 
 ## Deliverable 3: Add a New Animal Sighting Post
@@ -81,6 +81,6 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
-
+First found the form using a querySelector. Then added an event listener (for submit) to this form. After that, passed in the event as an argument to the function inside the event listener. Then called the `preventDefault()` method on this event to avoid the default behavior of a form submitting. Then retrieved the information from the input fields of the form and created an animal object with them. This animal object is then passed into the `renderAnimalSightingPost` method and pushed into the `animalSightings` array within the traveler object. This final step also helps with generating a new id for each sighting post every time it is submitted.
 ```
 
