@@ -46,7 +46,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+add click event listener 
 ```
 
 ## Deliverable 2: Like Button
@@ -55,7 +55,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+get button and add like to the object
 ```
 
 ## Deliverable 3: Add a New Animal Sighting Post
@@ -81,6 +81,7 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
-
+select form and add submit event, get input using event.target. 
+Use user input and create new post. CLear form after submitting
 ```
 
