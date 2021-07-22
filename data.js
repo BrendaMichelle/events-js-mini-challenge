@@ -9,7 +9,7 @@ const traveler = {
         id: 1,
         travelerId: 1,
         species: "frog",
-        photo: "pics/frog.jpg",
+        photo: "pics/frog.JPG",
         link: "https://youtu.be/Fa_I68L_APY",
         description: "I saw this beautiful green frog resting on a leaf!"
       },
@@ -17,7 +17,7 @@ const traveler = {
         id: 2,
         travelerId: 1,
         species: "monkey",
-        photo: "pics/monkey.jpg",
+        photo: "pics/monkey.JPG",
         link: "https://youtu.be/dy-u0voqixQ",
         description: "I was so impressed by the monkey's fantastic leaps!"
       },
