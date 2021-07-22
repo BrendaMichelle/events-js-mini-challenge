@@ -59,14 +59,44 @@ animalToRemove.remove()
 /************************** EVENTS JS MINI CHALLENGE ******************************/
 
 /***** Deliverable 1 *****/
+const element = toggleColor(document.querySelector("h1#header"))
+
 function toggleColor(element) {
+    element.addEventListener('click', function(){
     if (element.style.color === "green") {
         element.style.color = "black"
     } else {
         element.style.color = "green"
-    }
-}
+    }})}
+
 
 /***** Deliverable 2 *****/
+const like = document.querySelector("button.like-button")
+like.addEventListener('click', function(){
+    traveler.likes+=1
+    likes.textContent =`${traveler.likes} Likes`
+})
 
 /***** Deliverable 3 *****/
+const form = document.querySelector('form#new-animal-sighting-form')
+    form.addEventListener('submit', function(event){
+        event.preventDefault()
+        const species= event.target[0].value
+        const video=event.target.link.value
+        const photo= event.target.photo.value
+        const description=event.target.description.value
+
+        const array= traveler.animalSightings
+        const newid =array[array.length -1].id +1
+        const animalObj={
+            species: species,
+            photo: photo,
+            link: video,
+            description: description,
+            id: newid,
+            travelerId: 1
+        }
+        array.push(animalObj)
+        renderAnimalSightingPost(animalObj)
+        form.reset()
+    })
