@@ -46,7 +46,9 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+it needs to be a callback function by force
+i.e., addEventListener(event, callback)
+where callback is function(event){ //TODO }
 ```
 
 ## Deliverable 2: Like Button
@@ -55,7 +57,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+using the console to test code is quite useful
 ```
 
 ## Deliverable 3: Add a New Animal Sighting Post
@@ -81,6 +83,6 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
-
+JS ain't that bad
 ```
 
