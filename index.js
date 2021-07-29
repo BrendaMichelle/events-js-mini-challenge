@@ -66,7 +66,35 @@ function toggleColor(element) {
         element.style.color = "green"
     }
 }
+const toggleElement = document.querySelector("h1#header")
+toggleElement.addEventListener('click', function(){
+    toggleColor(toggleElement)
+})
 
 /***** Deliverable 2 *****/
+const likeElement = document.querySelector(".like-button")
+likeElement.addEventListener('click', function(){
+    traveler.likes++
+    likes.textContent = `${traveler.likes} Likes`
+
+})
 
 /***** Deliverable 3 *****/
+const form = document.querySelector("form#new-animal-sighting-form")
+form.addEventListener('submit', function(event){
+    event.preventDefault()
+    const speciesInput = event.target.species.value
+    const videoLinkInput = event.target.link.value
+    const photoInput = event.target.photo.value
+    const descriptionInput = event.target.description.value
+
+    const obj = {
+        species: speciesInput,
+        link: videoLinkInput,
+        photo: photoInput,
+        description: descriptionInput
+    }
+
+    renderAnimalSightingPost(obj)
+    form.reset()
+})
