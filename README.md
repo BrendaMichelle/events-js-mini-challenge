@@ -1,4 +1,6 @@
-# JS Mini Challenge: Event Handling (PART 2)
+# JS Mini Challenge: Event Handling
+
+*This Lab Lovingly Stolen From [Ian Hollander](https://github.com/ihollander)*
 
 ## Instructions
 
@@ -16,56 +18,59 @@ git push
 
 To get feedback on your code, make a [pull request from your forked repo](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork). If you worked with a partner, you can tag your partner on the pull request.
 
-
 ## Assignment
 
 In this challenge, we're going to keep working on Raffy's Amazon trip page and give our users the ability to:
 
-- Like an animal sighting
-- Delete an animal sighting
-- View the update animal sighting description form
-- **BONUS**: Update animal sighting description 
+- Toggle the header color
+- Add a new animal sighting
+- 'Like' Raffy's profile 
 
-We've got some starter code already written for us (this should look somewhat familiar from the previous challenges - a few extra elements are being created inside the `renderAnimalSightingPost` function for today's deliverables). Your job is to add some additional functionality to make our app even more dynamic by handling user interactions.
+We've got some starter code already written for us (this should look somewhat familiar from the previous challenge - feel free to use the code you wrote for the previous challenge instead). Your job is to add some additional functionality to make our app more dynamic by handling user interactions.
 
 There's a section in this Readme file for your notes on each deliverable. As you go through the deliverables, write down some notes in this file on how you solved each problem. It'll help reinforce what you learned and give you a head start next time you see a similar problem.
 
-## Deliverable 1: Like an animal sighting
+## Deliverable 1: Toggle Header
 
-**When a user clicks an animal sighting's like button**, that animal sighting's likes should increase by 1. The likes won't persist (if you refresh the page, they'll reset to their original value) - we'll add persistence in a future challenge.
+**When a user clicks the header**, the color should toggle between black and red. 
 
+To get you started, there's a helper function already written takes in an element and toggles its color that you can use. You can try it out in your console:
+
+```js
+toggleColor(document.querySelector("h1#header"))
+```
+
+Try calling it a few times to see the color switch back and forth. 
+
+Once you have it working in the console, write an event listener that will use this helper function to change the color of the header when a user clicks on it.
 
 **YOUR NOTES**
 ```
-
+add click event listener 
 ```
 
-## Deliverable 2: Delete an animal sighting
+## Deliverable 2: Like Button
 
-**When a user clicks an animal sighting's delete button**, that animal sighting should be removed from the page. This won't persist (if you refresh the page, you'll see the animal sighting is back) - we'll add persistence in a future challenge.
+**When a user clicks the like button for Raffy's profile picture**, Raffy's likes should increase by 1. The likes won't persist (if you refresh the page, they'll reset to their original value) - we'll add persistence in a future challenge.
 
 **YOUR NOTES**
 ```
-
+get button and add like to the object
 ```
 
-## Deliverable 3: View the update animal sighting description form
+## Deliverable 3: Add a New Animal Sighting Post
 
-**When a user clicks an animal sighting's 'Toggle Update Form' button**, the form associated with that animal sighting should toggle between displaying and not displaying on the page. Look into the [display](https://www.w3schools.com/css/css_display_visibility.asp) CSS property to accomplish this task. Think about how we access CSS properties on elements using JavaScript (*hint - `element.style`*).
+Our app is already displaying some great animal sightings (check out the starter code in `index.js` to see how the initial render is set up), but we want our users to have the ability to add additional animal sightings by entering information in the `form#new-animal-sighting-form`.
 
+**When a user submits the form**, the new information about the animal sighting should be displayed in the animal list (you can use the `renderAnimalSightingPost` helper function from the starter code if you like - it takes in an object with: { id, species, photo, link, description }).
 
-**YOUR NOTES**
-```
+The data won't persist (when you refresh the page, the new animal sighting post won't show up) - we'll see how to fix this later on. For now, focus on getting the new post of an animal sighting on the page when the form is submitted!
 
-```
+You're encouraged to seek out a photo online and video video on YouTube, but if you'd like, here's an example photo and video you can use for testing purposes:
 
-
-## BONUS: Update animal sighting description
-
-**When a user submits an animal sighting's `form.update-form`**, the `<p></p>` element that displays the description of that animal sighting should be updated with the new description.
-
-The data won't persist (when you refresh the page, the description will reset to its original value) - we'll see how to fix this later on. For now, focus on updating the description of the animal sighting on the page when the form is submitted!
-
+- Photo: pics/birds.jpg
+- Link: https://youtu.be/VvMqSBcl2bE
+- Description: So many kinds of birds! Here's a silhouette of one of my faves.
 
 Some things to keep in mind:
 
@@ -76,6 +81,7 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
-
+select form and add submit event, get input using event.target. 
+Use user input and create new post. CLear form after submitting
 ```
 
