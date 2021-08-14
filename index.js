@@ -1,6 +1,6 @@
 /***** Deliverable 1 *****/
 const header = document.querySelector("#header")
-// console.log("Here's your header:", header)
+console.log("Here's your header:", header)
 
 
 /***** Deliverable 2 *****/
@@ -8,24 +8,24 @@ header.style.color = "green"
 
 
 /***** Deliverable 3 *****/
-// console.log('This is what the traveler object looks like: ', traveler)
+console.log('This is what the traveler object looks like: ', traveler)
 
 const profileImg = document.querySelector("#profile img")
 profileImg.src = traveler.photo
 profileImg.alt = traveler.name
 
-const profileH2 = document.querySelector("#profile h2")
-profileH2.textContent = traveler.name
+const profile_H2 = document.querySelector("#profile h2")
+profile_H2.textContent = traveler.name
 
-const profileEm = document.querySelector("#profile em")
-profileEm.textContent = traveler.nickname
+const profile_Em = document.querySelector("#profile em")
+profile_Em.textContent = traveler.nickname
 
 const likes = document.querySelector("#profile .likes")
 likes.textContent = `${traveler.likes} Likes`
 
 
 /***** Deliverable 4 *****/
-function renderAnimalSightingPost(animalObject) {
+function renderAnimalSightingPost (animalObject) {
     const li = document.createElement("li")
     li.dataset.id = animalObject.id
 
@@ -41,135 +41,62 @@ function renderAnimalSightingPost(animalObject) {
     a.target = "_blank"
     a.textContent = `Here's a video about the ${animalObject.species} species!`
 
-    const sightLikesPtag = document.createElement('p')
-    sightLikesPtag.className = 'likes-display'
-    sightLikesPtag.textContent = `${animalObject.likes} Likes`
-
-    const likeButton = document.createElement('button')
-    likeButton.classList.add('like-button')
-    likeButton.type = 'button'
-    likeButton.textContent = 'Like'
-
-    const deleteButton = document.createElement('button')
-    deleteButton.classList.add('delete-button')
-    deleteButton.type = 'button'
-    deleteButton.textContent = 'Delete'
-    
-    const updateButton = document.createElement('button')
-    updateButton.classList.add('toggle-update-form-button')
-    updateButton.type = 'button'
-    updateButton.textContent = 'Toggle Update Form'
-
-    const updateForm = document.createElement('form')
-    updateForm.className = 'update-form'
-    updateForm.innerHTML = `
-    <input type='text' value='${animalObject.description}'/>
-    <input type="submit" value="Update description" />
-    `
-    updateForm.style.display = 'none'
-
-
-    li.append(p, img, a, sightLikesPtag, likeButton, deleteButton, updateButton, updateForm)
+    li.append(p, img, a)
 
     const animalsUl = document.querySelector("#animals")
     animalsUl.append(li)
 }
 
-traveler.animalSightings.forEach(function (animalSightingObject) {
-    renderAnimalSightingPost(animalSightingObject)
+traveler.animalSightings.forEach(function (animalSightinObject) {
+    renderAnimalSightingPost(animalSightinObject)
 })
 
 /***** Deliverable 5 *****/
-// const animalToRemove = document.querySelector("[data-id='3'")
-// animalToRemove.remove()
+const animalToRemove = document.querySelector("[data-id='3'")
+animalToRemove.remove()
 
-/************************** EVENTS PART 1 JS MINI CHALLENGE ******************************/
+/***** End of Starter Code *****/
+/************************** EVENTS JS MINI CHALLENGE ******************************/
 
 /***** Deliverable 1 *****/
+const element = toggleColor(document.querySelector("h1#header"))
+
 function toggleColor(element) {
+    element.addEventListener('click', function(){
     if (element.style.color === "green") {
         element.style.color = "black"
     } else {
         element.style.color = "red"
-    }
-}
+    }})}
 
-header.addEventListener('click', function (event) {
-    toggleColor(event.target)
-})
 
 /***** Deliverable 2 *****/
-const button = document.querySelector('button.like-button')
-
-button.addEventListener('click', function () {
-    likes.textContent = `${traveler.likes++} Likes`
+const like = document.querySelector("button.like-button")
+like.addEventListener('click', function(){
+    traveler.likes+=1
+    likes.textContent =`${traveler.likes} Likes`
 })
-
 
 /***** Deliverable 3 *****/
-const newSightingForm = document.querySelector('form#new-animal-sighting-form')
+const form = document.querySelector('form#new-animal-sighting-form')
+    form.addEventListener('submit', function(event){
+        event.preventDefault()
+        const species= event.target[0].value
+        const video=event.target.link.value
+        const photo= event.target.photo.value
+        const description=event.target.description.value
 
-newSightingForm.addEventListener('submit', function (event) {
-    event.preventDefault()
-
-    const species = event.target[0].value
-    const video = event.target[1].value
-    const photo = event.target[2].value
-    const description = event.target[3].value
-    const lastIndex = traveler.animalSightings.length - 1
-
-    const newSightingObject = {
-        id: traveler.animalSightings[lastIndex].id + 1,
-        travelerId: 1,
-        species: species,
-        photo: photo,
-        link: video,
-        description: description,
-        likes: 0
-    }
-
-    renderAnimalSightingPost(newSightingObject)
-    newSightingForm.reset()
-
-})
-
-
-/***** End of Starter Code *****/
-/************************** EVENTS PART 2 JS MINI CHALLENGE ******************************/
-
-const sightingsUl = document.querySelector("ul#animals")
-sightingsUl.addEventListener('click', (event) => {
-    let sighting = event.target.closest('li')
-    if(event.target.matches('button.delete-button')){
-        event.target.closest('li').remove()
-    }
-    else if(event.target.matches('button.like-button')){
-        
-        
-        let like = sighting.querySelector('.likes-display')
-        let currentLike = parseInt(like.textContent)
-        currentLike ++
-        like.textContent = `${currentLike} Likes`
-    }
-    else if(event.target.matches('button.toggle-update-form-button')){
-        const update = sighting.querySelector("form.update-form")
-        if(update.style.display === 'block'){
-            update.style.display = 'none'
+        const array= traveler.animalSightings
+        const newid =array[array.length -1].id +1
+        const animalObj={
+            species: species,
+            photo: photo,
+            link: video,
+            description: description,
+            id: newid,
+            travelerId: 1
         }
-        else{
-            update.style.display = 'block'
-        }
-    }
-})
-
-// Bonus
-const updatedForm = document.querySelector('form.update-form')
-updatedForm.addEventListener('submit', function(event){
-    event.preventDefault()
-    const desIn = event.target[0].value
-    const des = event.target.closest('li').querySelector('p')
-    des.textContent = desIn
-
-})
-
-
+        array.push(animalObj)
+        renderAnimalSightingPost(animalObj)
+        form.reset()
+    })
